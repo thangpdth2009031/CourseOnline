@@ -22,6 +22,21 @@ namespace CourseOnline.Controllers
             return View();
         }
 
+        public ActionResult Course()
+        {
+            return View();
+        }
+
+        public ActionResult Team()
+        {
+            return View();
+        }
+
+        public ActionResult Testimonial()
+        {
+            return View();
+        }
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
