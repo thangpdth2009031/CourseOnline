@@ -8,5 +8,6 @@ namespace CourseOnline.Areas.Admin.Content
     public class TestGit
     {
         public int HiHI { get; set; }
+        public int hehe { get; set; }
     }
 }
