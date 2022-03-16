@@ -12,6 +12,10 @@ namespace CourseOnline.Areas.Admin.Controllers
         public ActionResult Index()
         {
             return View();
+        }// GET: Admin/Dattest
+        public ActionResult Index2()
+        {
+            return View();
         }
     }
 }
