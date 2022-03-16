@@ -156,3 +156,7 @@ C:\Users\haduy\source\repos\ProjectSem3Course\CourseOnline\CourseOnline\obj\Debu
 C:\Users\haduy\source\repos\ProjectSem3Course\CourseOnline\CourseOnline\obj\Debug\CourseOnline.dll
 C:\Users\haduy\source\repos\ProjectSem3Course\CourseOnline\CourseOnline\obj\Debug\CourseOnline.pdb
 C:\Users\trieu\source\repos\CourseOnline\CourseOnline\obj\Debug\CourseOnline.csproj.CopyComplete
+C:\Users\uinhi\source\repos\CourseOnline\CourseOnline\CourseOnline\obj\Debug\CourseOnline.csproj.AssemblyReference.cache
+C:\Users\uinhi\source\repos\CourseOnline\CourseOnline\CourseOnline\obj\Debug\CourseOnline.csproj.CoreCompileInputs.cache
+C:\Users\uinhi\source\repos\CourseOnline\CourseOnline\CourseOnline\obj\Debug\CourseOnline.dll
+C:\Users\uinhi\source\repos\CourseOnline\CourseOnline\CourseOnline\obj\Debug\CourseOnline.pdb
