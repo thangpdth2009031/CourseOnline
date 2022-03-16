@@ -9,5 +9,6 @@ namespace CourseOnline.Areas.Admin.Content
     {
         public int HiHI { get; set; }
         public int hehe { get; set; }
+        public int hoho { get; set; }
     }
 }
