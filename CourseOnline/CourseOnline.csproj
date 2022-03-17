@@ -1413,6 +1413,7 @@
     <Content Include="Views\Home\Course.cshtml" />
     <Content Include="Views\Home\Team.cshtml" />
     <Content Include="Views\Home\Testimonial.cshtml" />
+    <Content Include="Views\Home\ContactTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

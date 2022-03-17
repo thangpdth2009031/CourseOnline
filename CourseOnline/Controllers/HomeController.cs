@@ -43,5 +43,11 @@ namespace CourseOnline.Controllers
 
             return View();
         }
+        public ActionResult ContactTest()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
