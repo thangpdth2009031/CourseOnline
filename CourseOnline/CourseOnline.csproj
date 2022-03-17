@@ -149,6 +149,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\..\..\..\Temblate\login-page-css-master\src\10-quora-indo\background-img.jpg">
+      <Link>Content\img\background-img.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\..\Temblate\login-page-css-master\src\10-quora-indo\background-mobile.png">
+      <Link>Content\img\background-mobile.png</Link>
+    </Content>
     <Content Include="Areas\Admin\ContentAdmin\assets\extra-libs\calendar\calendar.css" />
     <Content Include="Areas\Admin\ContentAdmin\assets\extra-libs\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.css" />
     <Content Include="Areas\Admin\ContentAdmin\assets\extra-libs\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.min.css" />
@@ -920,7 +926,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\additional.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\icons\facebook-m.svg" />
+    <Content Include="Content\icons\facebook.png" />
+    <Content Include="Content\icons\google-m.svg" />
+    <Content Include="Content\icons\google.png" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\about.jpg" />
     <Content Include="Content\img\carousel-1.jpg" />
@@ -1380,6 +1392,7 @@
     <Content Include="Areas\Admin\Views\HomeAdmin\Form.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\FormWizard.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\RegisterAdmin.cshtml" />
+    <Content Include="Content\scss\responsive.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1413,6 +1426,8 @@
     <Content Include="Views\Home\Course.cshtml" />
     <Content Include="Views\Home\Team.cshtml" />
     <Content Include="Views\Home\Testimonial.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Logitn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
