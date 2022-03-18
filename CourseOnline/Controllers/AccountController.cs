@@ -26,5 +26,9 @@ namespace CourseOnline.Controllers
         {
             return View();
         }
+        public ActionResult Register5()
+        {
+            return View();
+        }
     }
 }
