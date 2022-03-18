@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+
+@{
+    ViewBag.Title = "Login";
+}
+<div class="login">
+    <div class="bg-img login-page flex items-center justify-center">
+        <div class="modal-quora">
+            <div class="modal-quora__body">
+                <div class="logo flex flex-col items-center justify-center">
+                    <img src="logo.png" alt="Logo" class="logo__img" />
+                    <h2 class="logo__caption">
+                        A place to share knowledge and understand the world better
+                    </h2>
+                </div>
+                <div class="login__form flex">
+                    <div class="login__social w-half flex-col flex">
+                        <button class="icon-btn btn btn--google flex items-center justify-center">
+                            <span class="btn__icons">
+                                <img src="~/Content/icons/google.png" />
+                            </span>
+                            Continue with Google
+                        </button>
+                        <button class="icon-btn btn btn--facebook flex items-center justify-center">
+                            <span class="btn__icons">
+                                <img src="~/Content/icons/facebook.png" />
+                            </span>
+
+                            Continue with Facebook
+                        </button>
+                        <p class="login__caption">
+                            Register By Email. By continuing, you indicate that you have read and agree to Quora's Terms of Service and Privacy Policy and agree that your information is accurate.
+                        </p>
+                    </div>
+                    <div class="login__input w-half">
+                        <form action="" class="form-input">
+                            <div class="input-group col-lg-12 mb-4">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-2 border-md border-right-0">
+                                        <i class="fa fa-user text-muted"></i>
+                                    </span>
+                                </div>
+
+                                <input id="firstName" type="text" name="firstname" placeholder="User Name" class="form-control bg-white border-left-0 border-md">
+                            </div>
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-2 border-md border-right-0">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                            </div>
+                            <div class="flex justify-betweeen">
+                                <a href="#" class="login__url login__url--forgot">Forgot Password?</a>
+                                <button class="login__submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-quora__footer flex flex-col justify-center items-center">
+                <div class="flex">
+                    <a href="#" class="footer__url">Tentang Kami</a>
+                    <a href="#" class="footer__url">Bahasa (Languages)</a>
+                    <a href="#" class="footer__url">Karier</a>
+                    <a href="#" class="footer__url">Bisnis</a>
+                    <a href="#" class="footer__url">Privasi</a>
+                    <a href="#" class="footer__url">Ketentuan</a>
+                    <a href="#" class="footer__url">Kontak</a>
+                </div>
+                <p>© Quora Inc. 2020</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
