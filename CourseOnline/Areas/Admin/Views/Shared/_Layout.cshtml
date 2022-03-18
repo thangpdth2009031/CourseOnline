@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Tell the browser to be responsive to screen width -->
@@ -26,13 +27,20 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+=======
+    @Html.Partial("_PartialHead")
+>>>>>>> master
 </head>
 
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
+<<<<<<< HEAD
    
+=======
+    <div class="preloader">
+>>>>>>> master
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
@@ -51,6 +59,7 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
+<<<<<<< HEAD
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
@@ -326,23 +335,31 @@
                 </div>
             </nav>
         </header>
+=======
+        @Html.Partial("_PartialTopbar")
+>>>>>>> master
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
+<<<<<<< HEAD
         <aside class="left-sidebar" data-sidebarbg="skin5">
             <!-- Sidebar scroll-->
             <!-- End Sidebar scroll-->
             @RenderBody()
         </aside>
+=======
+        @Html.Partial("PartialLeftSidebar")
+>>>>>>> master
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
+<<<<<<< HEAD
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -1427,12 +1444,16 @@
             <!-- End footer -->
             <!-- ============================================================== -->
         </div>
+=======
+        @RenderBody()
+>>>>>>> master
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
+<<<<<<< HEAD
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- All Jquery -->
@@ -1459,5 +1480,8 @@
     <script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../dist/js/pages/chart/chart-page-init.js"></script>
+=======
+    @Html.Partial("_PartialScript")
+>>>>>>> master
 </body>
 </html>

@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container">
+    <div class="row py-5 align-items-center">
+        <!-- For Demo Purpose -->
+        <div class="col-md-6 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://i.imgur.com/uNGdWHi.png" alt="" class="img-fluid mb-3 d-none d-md-block">
+           
+
+        </div>
+
+        <!-- Registeration Form -->
+        <div class="col-md-6 col-lg-6 ml-auto">
+            <form action="#">
+                <div class="row">
+
+                    <!-- First Name -->
+                    <div class="half">
+                        <div class="bg order-1 order-md-2" style="background-image: url('images/bg_1.jpg');"></div>
+                        <h1>Create an Account</h1>
+                        <div class="contents order-2 order-md-1">
+
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="fname">Full Name</label>
+                                            <input type="text" class="form-control" placeholder="Full name" id="fname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="lname">User Name</label>
+                                            <input type="text" class="form-control" placeholder="User name" id="lname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 my-2">
+                                        <div class="form-group first">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" placeholder="Email" id="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 my-2">
+                                        <div class="form-group first">
+                                            <label for="email">Address</label>
+                                            <input type="email" class="form-control" placeholder="Address" id="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="lname">Phone Number</label>
+                                            <input type="text" class="form-control" placeholder="Phone" id="lname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="lname">Avatar</label>
+                                            <input type="text" class="form-control" placeholder="Avatar" id="lname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+
+                                        <div class="form-group last mb-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" placeholder="Your Password" id="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+
+                                        <div class="form-group last mb-3">
+                                            <label for="re-password">Comfirm Password</label>
+                                            <input type="password" class="form-control" placeholder="Your Password" id="re-password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Register" class="btn px-4 btn-primary">
+
+                            </form>     
+
+                            <!-- Social Login -->
+                            <div class="">
+                             
+                                    <button class="col-md-12  icon-btn btn btn--google">
+                                        <span class="btn__icons">
+                                            <img src="~/Content/icons/google.png" />
+                                        </span>
+                                        Continue with Google
+                                    </button>
+
+                       
+                                    <button class="col-md-12 icon-btn btn btn--facebook ">
+                                        <span class="btn__icons">
+                                            <img src="~/Content/icons/facebook.png" />
+                                        </span>
+
+                                        Continue with Facebook
+                                    </button>
+                             
+                                </div>
+                                <div>
+                                    <!-- Already Registered -->
+                                    <div class="text-center w-100">
+                                        <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
