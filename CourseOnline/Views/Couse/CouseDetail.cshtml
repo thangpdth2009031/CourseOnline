@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "CouseDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+ 
+}
+    <div class="row m-0">
+        <div class="col-md-8 blog-pull-right">
+            <div class="single-service" style="padding:10px">
+                <div itemscope="" itemtype="https://schema.org/VideoObject" style="width: 100%">
+
+                    <video style="width: 100%; padding-top: 10px; margin-top: 50px" controls="">
+                        <source src="http://webcoban.vn/file/bunny.mp4" type="video/mp4">
+                    </video>
+                    <script src="/FileUploads/files/video/1.mp4"></script>
+                </div>
+                <h3 class="text-theme-colored" style="padding:15px"> Bài 1: Thắng Yêu Linh Hihi</h3>
+                <ul id="myTab" class="nav nav-tabs boot-tabs">
+                    <li class="active" style="padding: 0 15px; border-bottom: 10px solid yellow"><a href="#comment" data-toggle="tab">Bình luận</a></li>
+                    <li><a href="#test" data-toggle="tab" style="padding: 0 15px"> Bài kiểm tra <span class="label label-info" style="padding: 0 15px">New</span></a> </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane  in active" id="comment">
+                        <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=389394078478055&amp;container_width=718&amp;height=100&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fcomments%23configurator&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v12.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 1010px;"><iframe name="f24f02c3aa6129c" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v12.0/plugins/comments.php?app_id=389394078478055&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34833cc97cf484%26domain%3Dlocalhost%26is_canvas%3Dfalse%26origin%3Dhttp%253A%252F%252Flocalhost%253A50782%252Ffd20056089d388%26relation%3Dparent.parent&amp;container_width=718&amp;height=100&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fcomments%23configurator&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v12.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 1010px;" class=""></iframe></span></div>
+                    </div>
+                    <div class="tab-pane ade in" id="test">
+                        <div class="pricing-table maxwidth400">
+                            <div class="font-36 pl-20 bg-theme-colored text-white text-center pr-20 p-10">
+                                KT 15Phut
+                            </div>
+                            <div class=" bg-white border-1px p-30 pt-20 pb-20">
+                                <h3 class="package-type font-28 m-0 text-black">Hoàn thành bài test</h3>
+                                <ul class="table-list list-icon theme-colored pb-0">
+                                    <li><i class="fa fa-check"></i>Tải file <a href="/FileUploads/files/pdf/Guide%20to%20fill%20some%20information%20on%20Claim%20Form-PTI-Care.pdf" class="btn btn-success">Tải xuống</a></li>
+                                    <li><i class="fa fa-check"></i>Làm bài test</li>
+                                    <li><i class="fa fa-check"></i>Kiểm tra định dạng và file</li>
+                                    <li><i class="fa fa-check"></i>Gửi file lên hệ thống</li>
+                                </ul>
+                            </div>
+                            <a href="/subject/SubmitTest?lectureId=1" class="btn btn-lg btn-theme-colored text-uppercase btn-block pt-20 pb-20 btn-flat">Gửi ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul><li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark"
+               href="javascript:void(0)"
+               aria-expanded="false">
+                <i class="mdi mdi-alert"></i><span class="hide-menu">Errors </span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="error-403.html" class="sidebar-link">
+                        <i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 403 </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="error-404.html" class="sidebar-link">
+                        <i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 404 </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="error-405.html" class="sidebar-link">
+                        <i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 405 </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="error-500.html" class="sidebar-link">
+                        <i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 500 </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+       </ul>
+    </div>

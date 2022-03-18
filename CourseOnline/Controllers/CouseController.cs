@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CourseOnline.Areas.Admin.Controllers
+namespace CourseOnline.Controllers
 {
-    public class DattestController : Controller
+    public class CouseController : Controller
     {
-        // GET: Admin/Dattest
-        public ActionResult Index()
+        // GET: Couse
+        public ActionResult CouseDetail()
         {
             return View();
         }
