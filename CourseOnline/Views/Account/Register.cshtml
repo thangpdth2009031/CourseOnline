@@ -9,156 +9,120 @@
 }
 
 <div class="container">
-    <div class="row py-5 mt-4 align-items-center">
+    <div class="row py-5 align-items-center">
         <!-- For Demo Purpose -->
-        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+        <div class="col-md-6 pr-lg-5 mb-5 mb-md-0">
             <img src="https://i.imgur.com/uNGdWHi.png" alt="" class="img-fluid mb-3 d-none d-md-block">
-            <h1>Create an Account</h1>
+           
 
         </div>
 
         <!-- Registeration Form -->
-        <div class="col-md-7 col-lg-6 ml-auto">
+        <div class="col-md-6 col-lg-6 ml-auto">
             <form action="#">
                 <div class="row">
 
                     <!-- First Name -->
+                    <div class="half">
+                        <div class="bg order-1 order-md-2" style="background-image: url('images/bg_1.jpg');"></div>
+                        <h1>Create an Account</h1>
+                        <div class="contents order-2 order-md-1">
 
-                    <div class="input-group col-lg-6 mb-4">
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="fname">Full Name</label>
+                                            <input type="text" class="form-control" placeholder="Full name" id="fname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="lname">User Name</label>
+                                            <input type="text" class="form-control" placeholder="User name" id="lname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 my-2">
+                                        <div class="form-group first">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" placeholder="Email" id="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 my-2">
+                                        <div class="form-group first">
+                                            <label for="email">Address</label>
+                                            <input type="email" class="form-control" placeholder="Address" id="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="lname">Phone Number</label>
+                                            <input type="text" class="form-control" placeholder="Phone" id="lname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <div class="form-group first">
+                                            <label for="lname">Avatar</label>
+                                            <input type="text" class="form-control" placeholder="Avatar" id="lname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
 
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
-                        </div>
+                                        <div class="form-group last mb-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" placeholder="Your Password" id="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-2">
 
-                        <input id="firstName" type="text" name="firstname" placeholder="User Name" class="form-control bg-white border-left-0 border-md">
-                    </div>
+                                        <div class="form-group last mb-3">
+                                            <label for="re-password">Comfirm Password</label>
+                                            <input type="password" class="form-control" placeholder="Your Password" id="re-password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Register" class="btn px-4 btn-primary">
 
-                    <!-- Last Name -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="lastName" type="text" name="lastname" placeholder="Full Name" class="form-control bg-white border-left-0 border-md">
-                    </div>
+                            </form>     
 
-                    <!-- Email Address -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-envelope text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
-                    </div>
+                            <!-- Social Login -->
+                            <div class="">
+                             
+                                    <button class="col-md-12  icon-btn btn btn--google">
+                                        <span class="btn__icons">
+                                            <img src="~/Content/icons/google.png" />
+                                        </span>
+                                        Continue with Google
+                                    </button>
 
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="bi bi-pin-map-fill"></i>
-                            </span>
-                        </div>
-                        <input id="Address" type="text" name="address" placeholder="Address" class="form-control bg-white border-left-0 border-md">
-                    </div>
+                       
+                                    <button class="col-md-12 icon-btn btn btn--facebook ">
+                                        <span class="btn__icons">
+                                            <img src="~/Content/icons/facebook.png" />
+                                        </span>
 
-                    <!-- Phone Number -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-phone-square text-muted"></i>
-                            </span>
-                        </div>
-                        <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
-                            <option value="">+12</option>
-                            <option value="">+10</option>
-                            <option value="">+15</option>
-                            <option value="">+18</option>
-                        </select>
-                        <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
-                    </div>.
-
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="bi bi-person-bounding-box"></i>
-                            </span>
-                        </div>
-                        <input id="Avatar" type="text" name="avatar" placeholder="Avatar" class="form-control bg-white border-left-0 border-md">
-                    </div>
-
-                    <!-- Job -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-black-tie text-muted"></i>
-                            </span>
-                        </div>
-                        <select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
-                            <option value="">Gender</option>
-                            <option value="">Male</option>
-                            <option value="">Fmale</option>
-                        </select>
-                    </div>
-
-                    <!-- Password -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
-                    </div>
-
-                    <!-- Password Confirmation -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="passwordConfirmation" type="text" name="passwordConfirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="form-group col-lg-12 mx-auto mb-0">
-                        <a href="#" class="btn btn-primary btn-block py-2">
-                            <span class="font-weight-bold">Create your account</span>
-                        </a>
-                    </div>
-
-                    <!-- Divider Text -->
-                    <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-                        <div class="border-bottom w-100 ml-5"></div>
-                        <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
-                        <div class="border-bottom w-100 mr-5"></div>
-                    </div>
-
-                    <!-- Social Login -->
-                    <div class="form-group col-lg-12 mx-auto">
-                        <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
-                            <i class="fa fa-facebook-f mr-2"></i>
-                            <span class="font-weight-bold">Continue with Facebook</span>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-block py-2 btn-twitter">
-                            <i class="fa fa-twitter mr-2"></i>
-                            <span class="font-weight-bold">Continue with Google</span>
-                        </a>
-                    </div>
-
-                    <!-- Already Registered -->
-                    <div class="text-center w-100">
-                        <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
-                    </div>
-
+                                        Continue with Facebook
+                                    </button>
+                             
+                                </div>
+                                <div>
+                                    <!-- Already Registered -->
+                                    <div class="text-center w-100">
+                                        <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+                                    </div>
+                                </div>
+                            </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
 

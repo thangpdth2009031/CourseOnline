@@ -609,7 +609,7 @@ input {
     margin-bottom: 3.75rem;
 }
 .logo__img {
-    height: 82px;
+    height: 120px;
 }
 .btn:hover {
     opacity: 0.7;
@@ -640,4 +640,335 @@ input {
     position: relative;
     padding-left: 2rem;
     padding-right: 0.5rem;
+}
+.content {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.registred {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #FFF;
+    display: none;
+    margin: 100px auto;
+    text-align: center;
+}
+
+{
+    width: 100px;
+    background: #3FA6FD;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px;
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    color: #FFF;
+}
+
+
+
+.login--content {
+    display: none;
+}
+
+.register--content, .login--content {
+    width: 500px;
+    margin: 100px auto;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 0px;
+    top: 20px;
+    font-size: 11px;
+    color: #B3BBCE;
+    transition: 0.2s ease all;
+}
+
+.email, .password, .name {
+    position: relative;
+    margin: 20px 0;
+}
+
+.inputText {
+    font-size: 12px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #B3BBCE;
+    outline: none;
+    color: #9390A1;
+    font-weight: 900;
+}
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label {
+    top: 2px;
+    bottom: 10px;
+    left: 0px;
+    font-size: 11px;
+    opacity: 1;
+    color: #3FA6FD;
+}
+
+
+.social {
+    width: 100%;
+    background: #3B5999;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    a
+
+{
+    text-decoration: none;
+    color: #FFF;
+}
+
+span {
+    i
+
+{
+    color: #fff;
+    float: left;
+    line-height: 45px;
+    margin-left: 26px;
+}
+
+}
+}
+
+
+.via-email {
+    text-align: center;
+    padding: 20px 0;
+    color: $Bali-Hai;
+}
+
+
+
+input[type="submit"] {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    background-color: #3FA6FD;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 24px 0 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: .1rem;
+    font-weight: 100;
+}
+
+
+
+.login--button {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    a
+
+{
+    background: #3FA6FD;
+    padding: 7px 14px;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+textarea:focus, input:focus {
+    outline: none !important;
+    
+}
+
+
+
+
+
+
+
+
+
+.content {
+    padding: 7rem 0;
+}
+
+
+
+.half, .half .container > .row {
+    height: 100vh;
+    min-height: 900px;
+}
+
+@media (max-width: 991.98px) {
+    .half .bg {
+        height: 200px;
+    }
+}
+
+.half .contents {
+    background: #f6f7fc;
+}
+
+.half .contents {
+    width: 80%;
+}
+
+.half .bg {
+    width: 20%;
+}
+
+@media (max-width: 991.98px) {
+    .half .contents, .half .bg {
+        width: 100%;
+    }
+}
+
+.half .contents .form-control, .half .bg .form-control {
+    border: none;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    height: 54px;
+    background: #fff;
+}
+
+    .half .contents .form-control:active, .half .contents .form-control:focus, .half .bg .form-control:active, .half .bg .form-control:focus {
+        outline: none;
+        -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+
+.half .bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.half a {
+    color: #888;
+    text-decoration: underline;
+}
+
+.half .btn {
+    height: 54px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.half .forgot-pass {
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    .control .caption {
+        position: relative;
+        top: .2rem;
+        color: #888;
+    }
+
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background: #ccc;
+}
+
+.control input:checked ~ .control__indicator {
+    background: #fb771a;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: #fb8633;
+}
+
+.control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    font-family: 'icomoon';
+    content: '\e5ca';
+    position: absolute;
+    display: none;
+    font-size: 16px;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+    color: #fff;
+}
+
+.control--checkbox .control__indicator:after {
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+.control--checkbox input:disabled:checked ~ .control__indicator {
+    background-color: #7e0cf5;
+    opacity: .2;
 }
