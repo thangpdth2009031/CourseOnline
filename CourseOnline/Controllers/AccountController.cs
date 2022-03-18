@@ -17,5 +17,10 @@ namespace CourseOnline.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Register2()
+        {
+            return View();
+        }
     }
 }
