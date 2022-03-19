@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using CourseOnline.Areas.Admin.Core.Utils;
 using CourseOnline.Models;
 
 namespace CourseOnline.Areas.Admin.Controllers
@@ -48,10 +49,14 @@ namespace CourseOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Password,RoleId,FullName,Email,Phone,Avatar,DateOfBirth,Gender,Address,Status,CreatedAt,UpdatedAt")] User user)
+        public ActionResult Create([Bind(Include = "Id,UserName,Password,RoleId,FullName,Email,Phone,Avatar,DateOfBirth,Gender,Address")] User user)
         {
             if (ModelState.IsValid)
             {
+                user.Status = true;
+                user.CreatedAt = DateTime.Now;
+                user.UpdatedAt = DateTime.Now;
+                ViewBag.Genders = new SelectList(GenderKey.GetGender(), "Key", "Value");
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");

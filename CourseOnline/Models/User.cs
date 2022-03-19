@@ -1,4 +1,4 @@
-namespace CourseOnline.Models
+﻿namespace CourseOnline.Models
 {
     using System;
     using System.Collections.Generic;
@@ -17,20 +17,25 @@ namespace CourseOnline.Models
 
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your username")]
         [StringLength(50)]
+        
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your password")]               
+        [StringLength(30, ErrorMessage = "Maximum 30 characters")]
+        [RegularExpression(@"^.{6,}$", ErrorMessage = "Minimum 6 characters required")]
         public string Password { get; set; }
 
         public int RoleId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your full name")]
         public string FullName { get; set; }
-
-        [Required]
+        
         [StringLength(250)]
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "Please enter your email")]                       
+        [EmailAddress(ErrorMessage = "Email address is not valid")]
         public string Email { get; set; }
 
         [StringLength(20)]
@@ -46,10 +51,10 @@ namespace CourseOnline.Models
         public string Address { get; set; }
 
         public bool Status { get; set; }
+        
+        public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
-        public DateTime? CreatedAt { get; set; }
-
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; } = DateTime.Now;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
