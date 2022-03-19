@@ -56,12 +56,12 @@ namespace CourseOnline.Areas.Admin.Controllers
                 user.Status = true;
                 user.CreatedAt = DateTime.Now;
                 user.UpdatedAt = DateTime.Now;
-                ViewBag.Genders = new SelectList(GenderKey.GetGender(), "Key", "Value");
+                
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Genders = new SelectList(GenderKey.GetGender(), "Key", "Value");
             ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
             return View(user);
         }

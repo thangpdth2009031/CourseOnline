@@ -128,14 +128,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DattestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Core.Utils\VariableExtension.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CouseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DbContext.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Cours.cs" />
+    <Compile Include="Models\CourseDbContext.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Lesson.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Topic.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\CourseOnline.dll" />
+    <Content Include="bin\CourseOnline.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -179,10 +197,14 @@
     <Content Include="Content\lib\waypoints\waypoints.min.js" />
     <Content Include="Content\lib\wow\wow.js" />
     <Content Include="Content\lib\wow\wow.min.js" />
+    <Content Include="DB\courseOnline.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\CourseOnline.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CourseOnline.dll" />
+    <Content Include="obj\Debug\CourseOnline.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\lib\owlcarousel\LICENSE" />
@@ -272,6 +294,26 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Dattest\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Charts.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Form.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\FormWizard.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index2.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\RegisterAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Tables.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Widgets.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PartialLeftSidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialHead.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialScript.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialTopBar.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="obj\Debug\CourseOnline.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\CourseOnline.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -305,11 +347,15 @@
     <Content Include="Views\Home\Course.cshtml" />
     <Content Include="Views\Home\Team.cshtml" />
     <Content Include="Views\Home\Testimonial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Couse\CouseDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\ContentAdmin\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

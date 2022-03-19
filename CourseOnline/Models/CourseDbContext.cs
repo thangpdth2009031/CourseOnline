@@ -8,7 +8,7 @@ namespace CourseOnline.Models
     public partial class CourseDbContext : DbContext
     {
         public CourseDbContext()
-            : base("name=CourseDbContext")
+            : base("name=MyConnectionString")
         {
         }
 
