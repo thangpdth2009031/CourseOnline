@@ -3,7 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model PagedList.IPagedList<CourseOnline.Models.Blog>
+@using PagedList.Mvc;
 <h2>Index</h2>
 <div class="container-fluid bg-primary py-5 mb-5 page-header">
     <div class="container py-5">
@@ -112,15 +113,6 @@
                         <div class="clearfix"></div>
                     </div>
                 </article>
-            </div>
-        </div>
-        <div class="text-center">
-            <div class="pagination-container">
-                <ul style="list-style-type:none">
-                    <li>
-                        <a href="#" class="next">Next &raquo;</a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
