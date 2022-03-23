@@ -1,12 +1,16 @@
-﻿using System;
+﻿using CourseOnline.Models;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 
 namespace CourseOnline.Areas.Admin.Core.Utils
 {
     public class VariableExtension
-    {
+    {       
     }
     public class SelectListModel
     {
@@ -18,7 +22,7 @@ namespace CourseOnline.Areas.Admin.Core.Utils
         public const int Male = 1;
         public const int FeMale = 0;
 
-        public static List<SelectListModel> GetGender()
+        public static List<SelectListModel> GetDic()
         {
             return new List<SelectListModel>() {
                 new SelectListModel{Key=1,Value="Nam" },
@@ -41,4 +45,5 @@ namespace CourseOnline.Areas.Admin.Core.Utils
             }
         }
     }
+    
 }

@@ -34,10 +34,10 @@ namespace CourseOnline.Models
                 .WithRequired(e => e.Category1)
                 .HasForeignKey(e => e.ParentId);
 
-            modelBuilder.Entity<Category>()
+            /*modelBuilder.Entity<Category>()
                 .HasMany(e => e.Courses)
                 .WithRequired(e => e.Category)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(false);*/
 
             modelBuilder.Entity<Cours>()
                 .Property(e => e.Image)

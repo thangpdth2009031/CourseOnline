@@ -8,15 +8,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">            
-            @Html.ActionLink("Home", "Index", "Home", null, new { @Class = "nav-item nav-link active" })
+            @Html.ActionLink("Home", "Index", "Home", null, new { @Class = "nav-item nav-link" })
             @Html.ActionLink("Abount", "About", "Home", null, new { @Class = "nav-item nav-link" })
             @Html.ActionLink("Course", "Course", "Home", null, new { @Class = "nav-item nav-link" })
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu fade-down m-0">
                     @Html.ActionLink("Our Team", "Team", "Home", null, new { @Class = "dropdown-item" })
-                    @Html.ActionLink("Testimonial", "Testimonial", "Home", null, new { @Class = "dropdown-item" })
-
+                    @Html.ActionLink("Testimonial", "Testimonial", "Home", null, new { @Class = "dropdown-item" })                    
                 </div>
             </div>
             @Html.ActionLink("Contact", "Contact", "Home", null, new { @Class = "nav-item nav-link" })

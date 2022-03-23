@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Indexdetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Indexdetail</h2>
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Blog</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home", null, new { @Class = "text-white" })</li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">@Html.ActionLink("About", "About", "Home", null, new { @Class = "text-white" })</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-30 mb-30 pt-30 pb-30">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="blog-posts single-post">
+                <article class="post clearfix mb-0">
+                    <div class="entry-header">
+                        <div class="post-thumb thumb">   <img style="width: 100%; height: 100%" src="~/Content/img/1-removebg-preview.png" alt="" class="img-responsive img-fullwidth"> </div>
+                    </div>
+                    <div class="entry-content p-20 pr-10 bg-lighter">
+                        <div class="entry-meta media mt-2 no-bg no-border">
+                            <div class="text-center" ; style="background-color: #202C45; padding: 5px 15px 5px 15px; display: table-cell; vertical-align: top">
+                                <ul style="list-style-type: none; padding:unset; margin:unset">
+                                    <li class="" style="border-bottom: 1px solid #eee !important;">26</li>
+                                    <li class="">9</li>
+                                </ul>
+                            </div>
+                            <div style="display: table-cell; vertical-align:top; padding-left:15px">
+                                <div class="event-content pull-left flip">
+                                    <h3 class="entry-title text-white text-uppercase m-0 mt-2" style="font-size:20px"><a style="color:black" href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a">THE FAMILY HANDYMAN: AUTOMOTIVE</a></h3>
+                                    <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                                        <i class="fa fa-user mr-5 text-theme-colored"></i> Quản Trị
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-post">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><blockquote><p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i></p><p>Someone famous in Source Title</p></blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sidebar sidebar-right mt-sm-30">
+                <div class="widget">
+                    <h5 class="widget-title line-bottom">Search box</h5>
+                    <div class="search-form">
+                        <form action="/article/index">
+                            <div class="input-group">
+                                <input type="text" placeholder="Click to Search" name="query" class="form-control search-input">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="widget" style="padding-top:20px">
+                    <h5 class="widget-title line-bottom">Latest News</h5>
+                    <div class="latest-posts">
+                        <article class="post media-post clearfix pb-0 mb-10">
+                            <a class="post-thumb" href="#"><img src="~/Content/img/1-removebg-preview.png" alt="THE FAMILY HANDYMAN: AUTOMOTIVE"></a>
+                            <div class="post-right">
+                                <h5 class="post-title mt-0"><a href="#">THE FAMILY HANDYMAN: AUTOMOTIVE</a></h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum do...</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="widget" style="padding-top:20px">
+                    <h5 class="widget-title line-bottom">Latest News</h5>
+                    <div class="latest-posts">
+                        <article class="post media-post clearfix pb-0 mb-10">
+                            <a class="post-thumb" href="#"><img src="~/Content/img/1-removebg-preview.png" alt="THE FAMILY HANDYMAN: AUTOMOTIVE"></a>
+                            <div class="post-right">
+                                <h5 class="post-title mt-0"><a href="#">THE FAMILY HANDYMAN: AUTOMOTIVE</a></h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum do...</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
