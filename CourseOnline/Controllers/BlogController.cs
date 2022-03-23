@@ -6,18 +6,14 @@ using System.Web.Mvc;
 
 namespace CourseOnline.Controllers
 {
-    public class AccountController : Controller
+    public class BlogController : Controller
     {
-        // GET: Account
-        public ActionResult Login()
+        // GET: Blog
+        public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Register()
-        {
-            return View();
-        }
-        public ActionResult AccountProfile()
+        public ActionResult Indexdetail()
         {
             return View();
         }
