@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Blog</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home", null, new { @Class = "text-white" })</li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">@Html.ActionLink("Abuot", "About", "Home", null, new { @Class = "text-white" })</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <article class="post clearfix mb-30 mb-sm-30">
+                    <div class="entry-header">
+                        <div class="post-thumb thumb">
+                            <img src="~/Content/img/1-removebg-preview.png" alt="" class="img-responsive img-fullwidth">
+                        </div>
+                    </div>
+                    <div class="entry-content p-20 pr-10 bg-lighter" style="background-color: #eeee; padding: 25px">
+                        <div class="entry-meta media mt-2 no-bg no-border">
+                            <div class="text-center" ; style="background-color: #202C45; padding: 5px 15px 5px 15px; display: table-cell; vertical-align: top">
+                                <ul style="list-style-type: none; padding:unset; margin:unset">
+                                    <li class="" style="border-bottom: 1px solid #eee !important;">26</li>
+                                    <li class="">9</li>
+                                </ul>
+                            </div>
+                            <div style="display: table-cell; vertical-align:top; padding-left:15px">
+                                <div class="event-content pull-left flip">
+                                    <h4 class="entry-title text-white text-uppercase m-0 mt-2" style="font-size:16px">
+                                        <a style="color:black" href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a">THE FAMILY HANDYMAN: AUTOMOTIVE</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @*<a href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a" class="">Xem thêm</a>*@
+                        @Html.ActionLink("Xem thêm", "Indexdetail", "Blog", new { @class = "btn-read-more" })
+                        <div class="clearfix"></div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <article class="post clearfix mb-30 mb-sm-30">
+                    <div class="entry-header">
+                        <div class="post-thumb thumb">
+                            <img src="~/Content/img/1-removebg-preview.png" alt="" class="img-responsive img-fullwidth">
+                        </div>
+                    </div>
+                    <div class="entry-content p-20 pr-10 bg-lighter" style="background-color: #eeee; padding: 25px">
+                        <div class="entry-meta media mt-2 no-bg no-border">
+                            <div class="text-center" ; style="background-color: #202C45; padding: 5px 15px 5px 15px; display: table-cell; vertical-align: top">
+                                <ul style="list-style-type: none; padding:unset; margin:unset">
+                                    <li class="" style="border-bottom: 1px solid #eee !important;">26</li>
+                                    <li class="">9</li>
+                                </ul>
+                            </div>
+                            <div style="display: table-cell; vertical-align:top; padding-left:15px">
+                                <div class="event-content pull-left flip">
+                                    <h4 class="entry-title text-white text-uppercase m-0 mt-2" style="font-size:16px">
+                                        <a style="color:black" href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a">THE FAMILY HANDYMAN: AUTOMOTIVE</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @*<a href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a" class="">Xem thêm</a>*@
+                        @Html.ActionLink("Xem thêm", "Indexdetail", "Blog", new { @class = "btn-read-more" })
+                        <div class="clearfix"></div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <article class="post clearfix mb-30 mb-sm-30">
+                    <div class="entry-header">
+                        <div class="post-thumb thumb">
+                            <img src="~/Content/img/1-removebg-preview.png" alt="" class="img-responsive img-fullwidth">
+                        </div>
+                    </div>
+                    <div class="entry-content p-20 pr-10 bg-lighter" style="background-color: #eeee; padding: 25px">
+                        <div class="entry-meta media mt-2 no-bg no-border">
+                            <div class="text-center" ; style="background-color: #202C45; padding: 5px 15px 5px 15px; display: table-cell; vertical-align: top">
+                                <ul style="list-style-type: none; padding:unset; margin:unset">
+                                    <li class="" style="border-bottom: 1px solid #eee !important;">26</li>
+                                    <li class="">9</li>
+                                </ul>
+                            </div>
+                            <div style="display: table-cell; vertical-align:top; padding-left:15px">
+                                <div class="event-content pull-left flip">
+                                    <h4 class="entry-title text-white text-uppercase m-0 mt-2" style="font-size:16px">
+                                        <a style="color:black" href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a">THE FAMILY HANDYMAN: AUTOMOTIVE</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @*<a href="/article/detail?id=ad87cfb8-8b00-4bc2-9379-fe08410a966a" class="">Xem thêm</a>*@
+                        @Html.ActionLink("Xem thêm", "Indexdetail", "Blog", new { @class = "btn-read-more" })
+                        <div class="clearfix"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="pagination-container">
+                <ul style="list-style-type:none">
+                    <li>
+                        <a href="#" class="next">Next &raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
