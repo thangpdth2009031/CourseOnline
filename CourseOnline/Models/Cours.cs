@@ -29,14 +29,10 @@ namespace CourseOnline.Models
 
         [Required]
         public string Description { get; set; }
-
-        [Required]
-        public string Content { get; set; }
-
+        
         [Required]
         public string Benefits { get; set; }
-
-        [Required]
+        
         public string Document { get; set; }
 
         public bool Status { get; set; }

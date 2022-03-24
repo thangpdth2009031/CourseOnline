@@ -1,0 +1,75 @@
+﻿@model CourseOnline.Models.Lesson
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lesson</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic.TopicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.TopicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LessonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LessonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrlFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeVideo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
