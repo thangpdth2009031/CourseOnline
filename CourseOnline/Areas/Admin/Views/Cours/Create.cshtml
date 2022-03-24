@@ -1,4 +1,5 @@
-﻿@model CourseOnline.Models.Cours
+﻿
+@model CourseOnline.Models.Cours
 
 @{
     ViewBag.Title = "Create";
@@ -19,7 +20,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.DropDownList("CategoryId", null, "--Category--", htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -42,32 +43,29 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
+                            <span class="input-group-addon" onclick="ChooseImg()">
+                                <i class="fa fa-upload fa-lg"></i>
+                            </span>
                         </div>
+                        <img class="img img-thumbnail" id="Img" src="" style="height: 200px;width:200px" />
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" }, id = "txtDescription" })
                             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                    </div>                   
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Benefits, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Benefits, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.TextAreaFor(model => model.Benefits, new { htmlAttributes = new { @class = "form-control" }, id = "txtBenefits" })
                             @Html.ValidationMessageFor(model => model.Benefits, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -75,21 +73,15 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Document, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Document, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Document, new { htmlAttributes = new { @class = "form-control", @id = "UrlDocument" }, id = "UrlDocument" })
+                            <span class="input-group-addon" onclick="ChooseFile()">
+                                <i class="fa fa-upload fa-lg"></i>
+                            </span>
                             @Html.ValidationMessageFor(model => model.Document, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <div class="checkbox">
-                                @Html.EditorFor(model => model.Status)
-                                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    
+
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -105,3 +97,32 @@
         </div>
     </div>
 </div>
+@section Scripts {
+    <script>
+
+        function ChooseImg() {
+            const finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#Img").attr("src", fileUrl);
+                $("#txtImage").val(fileUrl);
+            }
+            finder.popup();
+        }
+        var editor = CKEDITOR.replace('txtDescription', {
+            customConfig: '/Content/js/plugins/ckeditor/ckeditor.js',
+            htmlEncodeOutput: true
+        })
+        var editor = CKEDITOR.replace('txtBenefits', {
+            customConfig: '/Content/js/plugins/ckeditor/ckeditor.js',
+            htmlEncodeOutput: true
+        })
+        function ChooseFile() {
+            const finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#UrlDocument").val(fileUrl);
+            }
+            finder.popup();
+        }
+        const content = CKEDITOR.instances['txtDescription'].getData();
+    </script>
+}}
