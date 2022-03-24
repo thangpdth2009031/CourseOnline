@@ -20,8 +20,7 @@ namespace CourseOnline.Models
         [Required]
         public string Description { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required]        
         public string Content { get; set; }
 
         public bool IsDelete { get; set; }

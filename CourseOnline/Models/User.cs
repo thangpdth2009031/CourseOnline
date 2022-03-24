@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("User")]
     public partial class User
@@ -13,6 +14,7 @@
         public User()
         {
             Orders = new HashSet<Order>();
+            Avatar = "~/FileUploads/images/Avatar_user/avatar-default.jpg";
         }
 
         public int Id { get; set; }
@@ -22,8 +24,7 @@
         
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your password")]               
-        [StringLength(30, ErrorMessage = "Maximum 30 characters")]
+        [Required(ErrorMessage = "Please enter your password")]       
         [RegularExpression(@"^.{6,}$", ErrorMessage = "Minimum 6 characters required")]
         public string Password { get; set; }
 
@@ -55,6 +56,8 @@
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

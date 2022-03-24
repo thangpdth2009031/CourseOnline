@@ -1,8 +1,9 @@
-﻿@model IEnumerable<CourseOnline.Models.User>
-
+﻿@model PagedList.IPagedList<CourseOnline.Models.User>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";    
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -26,98 +27,149 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <table class="table">
-                <tr>                    
-                    <th>
-                        @Html.DisplayNameFor(model => model.Role.Name)
-                    </th>                    
-                    <th>
-                        @Html.DisplayNameFor(model => model.UserName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Password)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.FullName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Email)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Phone)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Avatar)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.DateOfBirth)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Gender)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Address)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </th>                   
-                    <th></th>
-                </tr>
+            @using (Html.BeginForm("Index", "Users", FormMethod.Get))
+            {
+                <p>
+                    Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    <input type="submit" value="Search" />
+                </p>
+            }
+            @using (Html.BeginForm("DeleteAll", "Users", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
 
-                @foreach (var item in Model)
-                {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Role.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Password)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Avatar)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOfBirth.ToString("yyyy-MM-dd"))
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                @*<td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>  *@
-                @if (item.Status)
-                {
-                    <td class="text-center"><span class="btn btn-success">Hiện</span></td>
-                }
-                else
-                {
-                    <td class="text-center"><span class="btn btn-danger">Đang ẩn</span></td>
+                <p>
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Show all", "all", null, new { @class = "btn btn-info" })
+                    <input type="submit" value="Delete Selected Students" onclick="return confirm('Are you sure you wish to delete selected Students?');" class="btn btn-danger" />
+                </p>
 
-                }
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-                }
+                @* <button type="submit" value="Delete" class="btn btn-sm btn-danger rounded-0" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i> Delete</button>
+                    <br /><br />*@
+                <table class="table table-bordered" id="DataTable">
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="checkBoxAll" class="custom-checkbox" />
+                        </th>
+                        <th>
+                            Avatar
+                        </th>
+                        <th>
+                            @Html.ActionLink("Role", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                            <i class="fa-solid fa-arrow-down-arrow-up"></i>
+                        </th>
+                        <th>
+                            @Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                        </th>
+                        <th>
+                            Password
+                        </th>
+                        @*<th>
+                                @Html.DisplayNameFor(model => model.FullName)
+                            </th>*@
+                        <th>
+                            @Html.ActionLink("Full Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            @Html.ActionLink("Create At", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Update At", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                        <th></th>
+                    </tr>
 
-            </table>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            @if (item.Status)
+                            {
+                                @*<td><input type="checkbox" name="ID" value="@item.Id" class="custom-checkbox chkCheckBoxId" /></td>*@
+                                <td>
+                                    <input type="checkbox" name="ids" value="@item.Id" />
+                                </td>
+
+
+                                <td>
+                                    <img src="@item.Avatar" alt="Alternate Text" style="height:50px; width:50px" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Role.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FullName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UpdatedAt)
+                                </td>
+
+                                @*   <td class="text-center"><span class="btn btn-success">Hiện</span></td>                    *@
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @*  @Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                                    @*  @using (Html.BeginForm("Delete", "Users", FormMethod.Post))
+                                        {<input type="submit" value="Delete" onclick="return confirm('Are you sure you wish to delete selected Students?');" class="btn btn-danger" />}*@
+                                </td>
+                            }
+                        </tr>
+                    }
+                </table>
+                <br />
+            }
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+                     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
         </div>
     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -12,12 +12,11 @@ namespace CourseOnline.Models
         public Category()
         {
             Categories1 = new HashSet<Category>();
-            Courses = new HashSet<Cours>();
         }
 
         public int Id { get; set; }
 
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -37,8 +36,5 @@ namespace CourseOnline.Models
         public virtual ICollection<Category> Categories1 { get; set; }
 
         public virtual Category Category1 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cours> Courses { get; set; }
     }
 }
