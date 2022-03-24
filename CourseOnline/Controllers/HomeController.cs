@@ -59,5 +59,10 @@ namespace CourseOnline.Controllers
 
             return View();
         }
+        public ActionResult Category()
+        {
+
+            return View();
+        }
     }
 }
