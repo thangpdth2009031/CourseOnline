@@ -34,7 +34,7 @@
                     <input type="submit" value="Search" />
                 </p>
             }
-            @using (Html.BeginForm("DeleteConfirmed", "Users", FormMethod.Post))
+            @using (Html.BeginForm("DeleteAll", "Users", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
 
@@ -135,8 +135,9 @@
                                 @*   <td class="text-center"><span class="btn btn-success">Hiện</span></td>                    *@
                                 <td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                    @*  @Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                                    @*  @using (Html.BeginForm("Delete", "Users", FormMethod.Post))
+                                        {<input type="submit" value="Delete" onclick="return confirm('Are you sure you wish to delete selected Students?');" class="btn btn-danger" />}*@
                                 </td>
                             }
                         </tr>
@@ -151,3 +152,24 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

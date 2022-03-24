@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using CourseOnline.Areas.Admin.Core.Utils;
 using CourseOnline.Models;
 using PagedList;
 
@@ -163,7 +160,7 @@ namespace CourseOnline.Areas.Admin.Controllers
         // POST: Admin/Users/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string[] ids)
+        public ActionResult DeleteAll(string[] ids)
         {
             /*User user = db.Users.Find(ids);
             db.Users.Remove(user);

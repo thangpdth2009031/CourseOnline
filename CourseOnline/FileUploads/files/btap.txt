@@ -1,0 +1,4 @@
+-đăng ký account
+-thông tin accoun
+-lịch sử giao dịch
+-transfer:kiểm tra username, password,receiver, amoun (nhỏ hơn số dư tk) => cho trong transection => trừ tiền thg gửi + cộng tiền thg nhận
