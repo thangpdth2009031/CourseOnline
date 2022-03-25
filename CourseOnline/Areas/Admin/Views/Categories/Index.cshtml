@@ -1,6 +1,4 @@
-﻿@model PagedList.IPagedList<CourseOnline.Models.Category>
-@using PagedList.Mvc;
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+﻿@model IEnumerable<CourseOnline.Models.Category>
 
 @{
     ViewBag.Title = "Index";
@@ -49,14 +47,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">List Categories</h5>
-                        @*@using (Html.BeginForm("Index", "Users", FormMethod.Get))
-                            {
-                                <p>
-                                    Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-                                    <input type="submit" value="Search" />
-                                </p>
-                            }*@
-                        @using (Html.BeginForm("DeleteConfirmed", "Users", FormMethod.Post))
+                
+                        @using (Html.BeginForm("DeleteConfirmed", "Categories", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
 
@@ -92,44 +84,41 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach (var item in Model)
+                                        @foreach (var item in Model.Where(x=>x.Status == true))
                                         {
-                                            <tr>
-                                                @if (item.Status)
-                                                {
-                                                    <td>
-                                                        <input type="checkbox" class="cb-element" name="ids" value="@item.Id" />
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Id)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.ParentId)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Category1.Name)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Name)
-                                                    </td>
-                                                    <td>
-                                                        <img src="@item.Image" alt="Alternate Text" style="height:50px; width:50px" />
-                                                    </td>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="cb-element" name="ids" value="@item.Id" />
+                                            </td>
+                                            <td>
+                                                @item.Id
+                                            </td>
+                                            <td>
+                                                ParentId
+                                            </td>
+                                            <td>
+                                                Category1
+                                            </td>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                <img src="@item.Image" alt="Alternate Text" style="height:50px; width:50px" />
+                                            </td>
 
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.CreatedAt)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.UpdatedAt)
-                                                    </td>
+                                            <td>
+                                                @item.CreatedAt
+                                            </td>
+                                            <td>
+                                                @item.UpdatedAt
+                                            </td>
 
-                                                    <td>
-                                                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                                    </td>
-                                                }
-                                            </tr>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                            </td>
+                                        </tr>
 
                                         }
                                     </tbody>

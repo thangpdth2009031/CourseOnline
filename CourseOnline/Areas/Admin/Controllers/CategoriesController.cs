@@ -16,52 +16,10 @@ namespace CourseOnline.Areas.Admin.Controllers
         private CourseDbContext db = new CourseDbContext();
 
         // GET: Admin/Categories
-        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult Index()
         {
-            /*var categories = db.Categories.Include(c => c.Category1);*/
-
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            if (searchString != null)
-            {
-                page = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-
-            ViewBag.CurrentFilter = searchString;
-            /*var users = from s in db.Users
-                        select s;*/
-            /*var users = db.Users.Include(u => u.Role);*/
-            var categories = from s in db.Categories
-                             select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                categories = categories.Where(s => s.Name.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    categories = categories.OrderByDescending(s => s.Name);
-                    break;
-                case "Date":
-                    categories = categories.OrderBy(s => s.CreatedAt);
-                    break;
-                /*_desc chỉ định sử giảm dần.*/
-                case "date_desc":
-                    categories = categories.OrderByDescending(s => s.CreatedAt);
-                    break;
-                /*Mặc định là tăng dần.*/
-                default:
-                    categories = categories.OrderBy(s => s.Name);
-                    break;
-            }
-            int pageSize = 8;
-            int pageNumber = (page ?? 1);
-            return View(categories.ToPagedList(pageNumber, pageSize));            
+            var categories = db.Categories.Include(c => c.Category1);            
+            return View(categories.ToList());            
         }
 
         // GET: Admin/Categories/Details/5
@@ -91,7 +49,7 @@ namespace CourseOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ParentId,Name,Image,NumberOfCourse,CreatedAt,UpdatedAt,Status")] Category category)
+        public ActionResult Create([Bind(Include = "Id,ParentId,Name,Image,NumberOfCourse,CreatedAt,UpdatedAt,Status, ImageSlide")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -128,7 +86,7 @@ namespace CourseOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ParentId,Name,Image,NumberOfCourse,CreatedAt,UpdatedAt,Status")] Category category)
+        public ActionResult Edit([Bind(Include = "Id,ParentId,Name,Image,NumberOfCourse,CreatedAt,UpdatedAt,Status,ImageSlide")] Category category)
         {
             if (ModelState.IsValid)
             {

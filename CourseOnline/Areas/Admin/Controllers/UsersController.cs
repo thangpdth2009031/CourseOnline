@@ -16,50 +16,10 @@ namespace CourseOnline.Areas.Admin.Controllers
         private CourseDbContext db = new CourseDbContext();
 
         // GET: Admin/Users
-        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult Index()
         {
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            if (searchString != null)
-            {
-                page = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-
-            ViewBag.CurrentFilter = searchString;
-            /*var users = from s in db.Users
-                        select s;*/
             var users = db.Users.Include(u => u.Role);
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                users = users.Where(s => s.FullName.Contains(searchString)
-                || s.UserName.Contains(searchString)
-                || s.Phone.Contains(searchString));        
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    users = users.OrderByDescending(s => s.FullName);
-                    break;
-                case "Date":
-                    users = users.OrderBy(s => s.CreatedAt);
-                    break;
-                    /*_desc chỉ định sử giảm dần.*/
-                case "date_desc":
-                    users = users.OrderByDescending(s => s.CreatedAt);
-                    break;
-                /*Mặc định là tăng dần.*/
-                default:
-                    users = users.OrderBy(s => s.FullName);
-                    break;
-            }
-            int pageSize = 8;
-            int pageNumber = (page ?? 1);               
-            return View(users.ToPagedList(pageNumber, pageSize));
+            return View(users.ToList());
         }
 
         // GET: Admin/Users/Details/5
