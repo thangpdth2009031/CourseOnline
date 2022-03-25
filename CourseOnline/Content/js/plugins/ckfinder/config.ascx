@@ -27,8 +27,8 @@
 	{
 		// Paste your license name and key here. If left blank, CKFinder will
 		// be fully functional, in Demo Mode.
-		LicenseName = "";
-		LicenseKey = "";
+		LicenseName = "License Name";
+		LicenseKey = "LWBJ5NMF8WK4TXE21HH35WP3UGCQJD6E";
 
 		// The base URL used to reach files in CKFinder through the browser.
 		BaseUrl = "/FileUploads/";
