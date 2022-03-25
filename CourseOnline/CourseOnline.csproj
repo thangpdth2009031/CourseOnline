@@ -933,6 +933,39 @@
     <Content Include="Areas\Admin\ContentAdmin\dist\js\app-style-switcher.js" />
     <Content Include="Areas\Admin\ContentAdmin\dist\js\custom.js" />
     <Content Include="Areas\Admin\ContentAdmin\dist\js\custom.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.foundation.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.foundation.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.semanticui.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\dataTables.semanticui.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\jquery.dataTables.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\css\jquery.dataTables.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\images\sort_asc.png" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\images\sort_asc_disabled.png" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\images\sort_both.png" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\images\sort_desc.png" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\images\sort_desc_disabled.png" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.foundation.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.foundation.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.semanticui.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\dataTables.semanticui.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\jquery.dataTables.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\DataTables-1.10.16\js\jquery.dataTables.min.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\datatables.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\datatables.js" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\datatables.min.css" />
+    <Content Include="Areas\Admin\ContentAdmin\dist\js\DataTables\datatables.min.js" />
     <Content Include="Areas\Admin\ContentAdmin\dist\js\jquery-ui.min.js" />
     <Content Include="Areas\Admin\ContentAdmin\dist\js\jquery.ui.touch-punch-improved.js" />
     <Content Include="Areas\Admin\ContentAdmin\dist\js\pages\calendar\cal-init.js" />
@@ -2099,6 +2132,7 @@
     <Content Include="FileUploads\images\Avatar_user\hot-girl-anh-the.jpeg" />
     <Content Include="FileUploads\images\Avatar_user\pexels-photo.jpeg" />
     <Content Include="FileUploads\images\Avatar_user\Usercase hoàn chỉnh.png" />
+    <Content Include="FileUploads\_thumbs\Files\Video\logo_app_music.jpg" />
     <Content Include="FileUploads\_thumbs\Images\Avatar_user\1.png" />
     <Content Include="FileUploads\_thumbs\Images\Avatar_user\2.png" />
     <Content Include="FileUploads\_thumbs\Images\Avatar_user\3.png" />
@@ -2637,6 +2671,8 @@
     <Content Include="Views\Blog\Indexdetail.cshtml" />
     <Content Include="Views\Course\Detail.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Course\ListCouse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
