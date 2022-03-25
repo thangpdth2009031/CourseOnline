@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CourseOnline.Dao;
+using CourseOnline.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,11 @@ namespace CourseOnline.Controllers
 {
     public class HomeController : Controller
     {
+        CourseDbContext db = new CourseDbContext();
         public ActionResult Index()
         {
-            return View();
+            var model = new CourseDao().ListAll();
+            return View(model);
         }
         public ActionResult Index2()
         {
@@ -24,7 +28,8 @@ namespace CourseOnline.Controllers
 
         public ActionResult Course()
         {
-            return View();
+            var model = new CourseDao().ListAll();
+            return View(model);
         }
 
         public ActionResult Team()
@@ -58,6 +63,16 @@ namespace CourseOnline.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Category()
+        {
+            return View();
+        }
+        public ActionResult Detail(int? id)
+        {
+            Cours course = db.Courses.Find(id);
+            return View(course);
         }
     }
 }
