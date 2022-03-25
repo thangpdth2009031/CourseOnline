@@ -13,5 +13,10 @@ namespace CourseOnline.Controllers
         {
             return View();
         }
+        // GET: Couse
+        public ActionResult ListCourse()
+        {
+            return View();
+        }
     }
 }
