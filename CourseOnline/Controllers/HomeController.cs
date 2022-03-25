@@ -64,6 +64,11 @@ namespace CourseOnline.Controllers
 
             return View();
         }
+
+        public ActionResult Category()
+        {
+            return View();
+
         public ActionResult Detail(int? id)
         {
             Cours course = db.Courses.Find(id);
