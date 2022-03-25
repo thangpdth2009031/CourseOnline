@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CourseOnline.Areas.Admin.Core.Utils;
+using CourseOnline.Common;
 using CourseOnline.Models;
 using PagedList;
 
@@ -91,12 +93,15 @@ namespace CourseOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Password,RoleId,FullName,Email,Phone,Avatar,DateOfBirth,Gender,Address")] User user)
+        public ActionResult Create([Bind(Include = "UserName,Password,RoleId,FullName,Email,Phone,Avatar,DateOfBirth,Gender,Address")] User user)
         {
             if (ModelState.IsValid)
             {
-                /*var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
-                user.Password = encryptedMd5Pas;        */               
+                var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
+                    Debug.WriteLine(encryptedMd5Pas);
+                user.Password = encryptedMd5Pas; 
+
+                
                 user.Status = true;
                 user.CreatedAt = DateTime.Now;
                 user.UpdatedAt = DateTime.Now;            

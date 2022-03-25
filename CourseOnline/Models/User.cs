@@ -24,8 +24,11 @@
         
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your password")]               
-        [StringLength(30, ErrorMessage = "Maximum 30 characters")]
+        [Required(ErrorMessage = "Please enter your password")]
+        
+        [StringLength(50, ErrorMessage = "Maximum 50 characters")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password: ")]
         [RegularExpression(@"^.{6,}$", ErrorMessage = "Minimum 6 characters required")]
         public string Password { get; set; }
 
