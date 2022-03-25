@@ -2,10 +2,7 @@
 @{
     ViewBag.Title = "CouseDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-
 }
-
 <style>
     .collapsible {
         background-color: white;
@@ -59,14 +56,13 @@
             background-color: #777;
         }
 
-    /* Style the tab content (and add height:100% for full page content) */
+    @*/ Style the tab content (and add height:100% for full page content) /*@
     .tabcontent {
         display: none;
         padding: 40px 20px;
         height: 100%;
     }
 </style>
-
 <div class="row m-0">
     <div class="col-md-8 blog-pull-right">
         <div class="single-service" style="padding:10px">
@@ -78,65 +74,36 @@
                 <script src="/FileUploads/files/video/1.mp4"></script>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="col-3"> <button class="tablink text-center" style="border:none" onclick="openPage('About', this)">Tài Liệu</button></div>
-
-            <h3 class="text-theme-colored" style="padding:15px"> Bài 1:💘 Đạt Yêu Linh Hihi</h3>
-            <ul id="myTab" class="nav nav-tabs boot-tabs">
-                <li class="active" style="padding: 0 15px; border-bottom: 10px solid yellow"><a href="#comment" data-toggle="tab">Bình luận</a></li>
-                <li><a href="#test" data-toggle="tab" style="padding: 0 15px"> Bài kiểm tra <span class="label label-info" style="padding: 0 15px">New</span></a> </li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-                <div class="tab-pane  in active" id="comment">
-                    <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=389394078478055&amp;container_width=718&amp;height=100&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fcomments%23configurator&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v12.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 1010px;"><iframe name="f24f02c3aa6129c" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v12.0/plugins/comments.php?app_id=389394078478055&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34833cc97cf484%26domain%3Dlocalhost%26is_canvas%3Dfalse%26origin%3Dhttp%253A%252F%252Flocalhost%253A50782%252Ffd20056089d388%26relation%3Dparent.parent&amp;container_width=718&amp;height=100&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fcomments%23configurator&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v12.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 1010px;" class=""></iframe></span></div>
-
-
-
             <h3 class="text-theme-colored" style="padding:15px"> @Model.CourseName</h3>
-            <ul id="myTab" class="nav nav-tabs boot-tabs">
-                <li class="active" style="padding: 0 15px; border-bottom: 10px solid yellow"><a href="#comment" data-toggle="tab">Bình luận</a></li>
-                <li><a href="#test" data-toggle="tab" style="padding: 0 15px"> Bài kiểm tra <span class="label label-info" style="padding: 0 15px">New</span></a> </li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-                <div class="tab-pane  in active" id="comment">
-                    <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=389394078478055&amp;container_width=718&amp;height=100&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fcomments%23configurator&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v12.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 1010px;"><iframe name="f24f02c3aa6129c" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v12.0/plugins/comments.php?app_id=389394078478055&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34833cc97cf484%26domain%3Dlocalhost%26is_canvas%3Dfalse%26origin%3Dhttp%253A%252F%252Flocalhost%253A50782%252Ffd20056089d388%26relation%3Dparent.parent&amp;container_width=718&amp;height=100&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fcomments%23configurator&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v12.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 1010px;" class=""></iframe></span></div>
-
-
-
-
-
-
+            <div class="container">
+                <div class="row border-bottom">
+                    <div class="col-3"> <button class="tablink text-center" style="border:none; background-color: #fff !important;" onclick="openPage('Home', this)" id="defaultOpen">Về Chúng Tôi</button></div>
+                    <div class="col-3"> <button class="tablink text-center" style="border:none" onclick="openPage('News', this)">Bài Học</button></div>
+                    <div class="col-3"> <button class="tablink text-center" style="border:none" onclick="openPage('Contact', this)">Thảo Luận</button></div>
+                    <div class="col-3"> <button class="tablink text-center" style="border:none" onclick="openPage('About', this)">Tài Liệu</button></div>
                 </div>
             </div>
             <div id="Home" class="m-3 tabcontent">
-                <h5>
-                    Hướng dẫn các bạn thật chi tiết từ tìm kiếm khách hàng, tiếp cận khách hàng, trình bày sản phẩm, vượt qua phản đối, biết kết thúc
-                    thương vụ và cung cấp dịch vụ sau bán hàng.
-                </h5>
-                <h5>
-                    Khóa học có tổng cộng 11 chương; mỗi chương có từ 1 video bài giảng hoặc nhiều hơn tùy vào nội dung; mỗi video bài giảng dưới 10 phút
-                    giúp các bạn dễ nắm kiến thức để ứng dụng ngay vào thực tế.
-                </h5>
+                <div>
+                    @Html.Raw(HttpUtility.HtmlDecode(Model.Description))
+                </div>
+                <h5 style="color: #06bbcc">Lợi ích của khóa học</h5>
+                <div>
+                    @Html.Raw(HttpUtility.HtmlDecode(Model.Benefits))
+                </div>
             </div>
             <div id="News" class="tabcontent container">
-                <h4>Đạt Yêu Linh hihi</h4>
-                <button class="collapsible border-bottom" style="font-size:18px">Chương 1: Hướng dẫn cài đặt môi trường</button>
+                @foreach (var item in Model.Topics)
+                {
+                    <button class="collapsible border-bottom" style="font-size:18px">@item.TopicName</button>
+                   @* @foreach (var les in item.Status == true)
+                    {
+                        <div class="panel pt-3 border-bottom">
+                            <i class="fa-solid fa-circle-play p-2"></i>
+                        </div>
+                    }*@
+                }
+
                 <div class="content-collapsible">
                     <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
                     <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
@@ -191,20 +158,20 @@
     </div>
 </div>
 <script>
-        function openPage(pageName, elmnt, color) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-            document.getElementById(pageName).style.display = "block";
-            elmnt.style.backgroundColor = color;
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
         }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
 
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>

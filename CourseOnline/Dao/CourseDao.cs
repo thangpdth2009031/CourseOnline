@@ -21,6 +21,7 @@ namespace CourseOnline.Dao
 
         public Cours ViewDetail(long id)
         {
+
             return db.Courses.Find(id);
         }
     }
