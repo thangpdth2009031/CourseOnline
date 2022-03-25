@@ -9,8 +9,7 @@ using System.Web.Mvc;
 namespace CourseOnline.Controllers
 {
     public class HomeController : Controller
-    {
-        CourseDbContext db = new CourseDbContext();
+    {       
         public ActionResult Index()
         {
             var model = new CourseDao().ListAll();
@@ -68,11 +67,6 @@ namespace CourseOnline.Controllers
         public ActionResult Category()
         {
             return View();
-
-        public ActionResult Detail(int? id)
-        {
-            Cours course = db.Courses.Find(id);
-            return View(course);
         }
     }
 }
