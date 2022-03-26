@@ -3,6 +3,11 @@
     ViewBag.Title = "ListCouse";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .bsd {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    }
+</style>
 <div class="container-fluid bg-primary py-5 mb-5 page-header">
     <div class="container py-5">
         <div class="row justify-content-center">
@@ -18,40 +23,41 @@
         </div>
     </div>
 </div>
-<div class="d-flex container-fluid">
-    <div class="" style="width: 70%;">
-        <h4 style="padding-left: 18px;">Danh Mục Con</h4>
+<div class="bsd d-flex container p-2">
+    <div class="" style="width: 100%; margin-right: 20px">
+        <h4 style="padding: 15px;">Danh Mục Con</h4>
+        <div class="form mb-3">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #efefef;">
+        </div>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu ăn</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Tiếng Anh Giao Tiếp (22)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu cơm</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Tiếng Anh Thương Mại (22)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu canh</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Phát Âm Tiếng Anh(25)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu chè</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Luyện Thi Tiếng Anh(26)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu xôi</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Tiếng Anh Giao Tiếp (22)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu rau</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Tiếng Anh Thương Mại (22)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu thịt</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Phát Âm Tiếng Anh(25)</p>
         </a>
         <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu cá</p>
-        </a>
-        <a href="#">
-            <p style="box-shadow: 0 1px #dbdbdb; padding-left: 5px; color: black ">Nấu trứng</p>
+            <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">Luyện Thi Tiếng Anh(26)</p>
         </a>
     </div>
     <div class="text-center" style="display:flex; justify-content:center">
         <div class="row">
-            <div class="col-lg-4 col-md-6 wow p-5 fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow p-3 fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">
@@ -79,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow p-5 fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow p-3 fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">
@@ -107,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 p-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 p-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">
@@ -135,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 p-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 p-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">
@@ -163,7 +169,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 p-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 p-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">
@@ -191,7 +197,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 p-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 p-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">
@@ -219,7 +225,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 p-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 p-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid" src="/Content/img/course-1.jpg" alt="">

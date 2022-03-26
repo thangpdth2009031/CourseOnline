@@ -46,12 +46,12 @@
                                             <th>Avatar</th>
                                             <th>Role</th>
                                             <th>Usser Name</th>
-                                            <th>Password</th>
+                                            @*<th>Password</th>*@
                                             <th>Full Name</th>
                                             <th>Phone</th>
                                             <th>Address</th>
-                                            <th>Create At</th>
-                                            <th>Update At</th>
+                                            @*<th>Create At</th>
+                                            <th>Update At</th>*@
                                             <th>Action</th>
 
                                         </tr>
@@ -79,9 +79,9 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.UserName)
                                                 </td>
-                                                <td>
+                                                @*<td>
                                                     @Html.DisplayFor(modelItem => item.Password)
-                                                </td>
+                                                </td>*@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.FullName)
                                                 </td>
@@ -93,19 +93,9 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Address)
                                                 </td>
-
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.CreatedAt)
-                                                </td>
-
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.UpdatedAt)
-                                                </td>
-                                               
                                                 <td>
                                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                                    @Html.ActionLink("Details", "Details", new { id = item.Id })                                              
                                                 </td>
 
                                             </tr>

@@ -37,7 +37,7 @@
 
     .dropbtn {
         background-color: white;    
-        padding: 26px;
+        padding: 5px;
         font-size: 15px;
         border: none;
         color: var(--dark);
@@ -84,9 +84,9 @@
 
         .form .fa-search {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #9ca3af
+            top: 13px;
+            left: 22px;
+            color: #9ca3af;
         }
 
         .form span {
@@ -106,15 +106,14 @@
         }
 
     .form-input {
-        height: 55px;
-        text-indent: 33px;
-        border-radius: 10px
+        height: 40px;
+        text-indent: 40px;
+        border-radius: 50px;
     }
 
-        .form-input:focus {
-            box-shadow: none;
-            border: none
-        }
+      /*  .form-input:focus {
+            border: 1px solid #06bbcc;
+        }*/
 </style>
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 
@@ -122,10 +121,11 @@
         <img src="~/Content/img/logo-homepage.png" style="width: 134px"/>
     </a>
 
-    <div class="dropdown mx-5">
-        <button onclick="myFunction()" class="dropbtn nav-link">
-            CATEGORY
-            <i class="fa-solid fa-angle-down icon-dropdown"></i>     
+    <div class="dropdown mx-4">
+        <button onclick="myFunction()" class="dropbtn nav-link d-flex mt-1">
+            <h5><i class="fa-solid fa-align-justify m-1 "></i></h5> 
+            <div class="m-1"> CATEGORY</div>
+            <i class="fa-solid fa-angle-down icon-dropdown m-2" style=""></i>     
         </button>
         <div id="myDropdown" class="dropdown-content">
             <div class="tab">
@@ -193,10 +193,7 @@
     </div>
     <div class="form" style="width: 35%">
         <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Search anything...">
-        <span class="left-pan">
-            <i class="fa fa-microphone"></i>
-        </span>
+        <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">       
     </div>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
