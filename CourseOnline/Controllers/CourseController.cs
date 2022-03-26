@@ -22,6 +22,10 @@ namespace CourseOnline.Controllers
             var course = new CourseDao().ViewDetail(id);
             return View(course);
         }
+        public ActionResult ListCourse()
+        {
+            return View();
+        }
 
     }
 }
