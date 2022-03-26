@@ -68,13 +68,13 @@
         <div class="single-service" style="padding:10px">
             <div itemscope="" itemtype="https://schema.org/VideoObject" style="width: 100%">
 
-                <video style="width: 100%; padding-top: 10px; margin-top: 50px" controls="">
-                    <source src="http://webcoban.vn/file/bunny.mp4" type="video/mp4">
-                </video>
-                <script src="/FileUploads/files/video/1.mp4"></script>
+                @* <video style="width: 100%; padding-top: 10px; margin-top: 50px" controls="">
+            <source src="https://www.youtube.com/embed/BtQynVJcaUo" type="video/mp4">
+        </video>
+        <script src="/FileUploads/files/video/1.mp4"></script>*@
+                <iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" style="width: 100%; padding-top: 10px; margin-top: 50px; height:448.36px" src="https://www.youtube.com/embed/W0vEUmyvthQ?autoplay=1&amp;mute=0&amp;controls=1&amp;origin=https%3A%2F%2Ffullstack.edu.vn&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>
             </div>
-
-            <h3 class="text-theme-colored" style="padding:15px"> @Model.CourseName</h3>
+            <h3 class="text-theme-colored" style="padding:15px">@Model.CourseName</h3>
             <div class="container">
                 <div class="row border-bottom">
                     <div class="col-3"> <button class="tablink text-center" style="border:none; background-color: #fff !important;" onclick="openPage('Home', this)" id="defaultOpen">Về Chúng Tôi</button></div>
@@ -93,16 +93,7 @@
                 </div>
             </div>
             <div id="News" class="tabcontent container">
-                @foreach (var item in Model.Topics)
-                {
-                    <button class="collapsible border-bottom" style="font-size:18px">@item.TopicName</button>
-                   @* @foreach (var les in item.Status == true)
-                    {
-                        <div class="panel pt-3 border-bottom">
-                            <i class="fa-solid fa-circle-play p-2"></i>
-                        </div>
-                    }*@
-                }
+
 
                 <div class="content-collapsible">
                     <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
@@ -137,24 +128,16 @@
         </div>
     </div>
     <div class="col-md-4 blog-pull-right" style="margin-top: 50px">
-        <button class="collapsible border-bottom" style="font-size:18px">Chương 1: Hướng dẫn cài đặt môi trường</button>
-        <div class="content-collapsible">
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
-        </div>
-        <button class="collapsible border-bottom" style="font-size:18px">Chương 2: Hướng dẫn cài đặt môi trường</button>
-        <div class="content-collapsible">
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
-        </div>
-        <button class="collapsible border-bottom" style="font-size:18px">Chương 3: Hướng dẫn cài đặt môi trường</button>
-        <div class="content-collapsible">
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
-            <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
-        </div>
+        @foreach (var item in Model.Topics)
+        {
+            <button class="collapsible border-bottom" style="font-size:18px">@item.TopicName</button>
+            <div class="content-collapsible">
+                @foreach (var item2 in item.Lessons)
+                {
+                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>@item2.LessonName</div>
+                }
+            </div>
+        }
     </div>
 </div>
 <script>
