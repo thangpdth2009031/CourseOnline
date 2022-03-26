@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using CourseOnline.Areas.Admin.Core.Utils;
+using CourseOnline.Common;
 using CourseOnline.Models;
 using PagedList;
 
@@ -53,7 +56,7 @@ namespace CourseOnline.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var encryptedMd5Pas = Encryptor.CreateMD5(user.Password);
+                var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);                
                 user.Password = encryptedMd5Pas;
                 user.Status = true;
                 user.CreatedAt = DateTime.Now;
