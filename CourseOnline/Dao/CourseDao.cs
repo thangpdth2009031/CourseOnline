@@ -18,10 +18,5 @@ namespace CourseOnline.Dao
         {
             return db.Courses.Where(x => x.Status == true).OrderBy(x => x.Id).ToList();
         }
-
-        public Cours ViewDetail(long id)
-        {
-            return db.Courses.Find(id);
-        }
     }
 }
