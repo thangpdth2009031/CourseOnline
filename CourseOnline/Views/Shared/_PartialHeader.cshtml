@@ -212,8 +212,11 @@
         </div>
     </div>
     <div class="form" style="width: 35%">
-      
-        <i class="fa fa-search"></i>
+        @using (Html.BeginForm("Search", "Cours"))
+            {
+
+            }
+            <i class="fa fa-search"></i>
         <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">
     </div>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
