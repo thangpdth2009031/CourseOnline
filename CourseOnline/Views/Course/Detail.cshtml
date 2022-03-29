@@ -8,7 +8,7 @@
         background-color: white;
         color: black;
         cursor: pointer;
-        padding: 18px;
+        padding: 15px 0;
         width: 100%;
         border: none;
         text-align: left;
@@ -17,11 +17,12 @@
         cursor: pointer;
     }
 
-        .collapsible:hover {
-            background-color: #d7d7d7;
+        .active, .collapsible:after {
+            color: #06bbcc;
         }
 
-        .collapsible:after {
+
+        bai-dang:after {
             content: '\002B';
             color: black;
             font-weight: bold;
@@ -29,12 +30,11 @@
             margin-left: 5px;
         }
 
-    .active:after {
-        content: "\2212";
-    }
 
-    .content-collapsible {
-        padding: 0 18px;
+
+
+
+    .content-collapsible {       
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
@@ -59,8 +59,15 @@
     @*/ Style the tab content (and add height:100% for full page content) /*@
     .tabcontent {
         display: none;
-        padding: 40px 20px;
+        padding: 10px 15px;
         height: 100%;
+    }
+    .lessonname {
+        width: 75%;
+    }
+    .lessonname-time {
+        color: #979797;
+    }
     }
 </style>
 <div class="row m-0">
@@ -94,8 +101,9 @@
             </div>
             <div id="News" class="tabcontent container">
 
-
+                <button class="collapsible border-bottom" style="font-size:18px">Chương 1: Hướng dẫn cài đặt môi trường</button>
                 <div class="content-collapsible">
+
                     <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
                     <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
                     <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
@@ -127,16 +135,25 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 blog-pull-right" style="margin-top: 50px">
+    <div class="col-md-4 blog-pull-right" style="margin-top: 55px">
         @foreach (var item in Model.Topics)
         {
-            <button class="collapsible border-bottom" style="font-size:18px">@item.TopicName</button>
+            <button class="collapsible border-bottom d-flex" style="font-size:16px">
+                <div style="width: 81%">@item.TopicName</div>
+                <div style="color: #9a9a9a;">4 bài đăng</div>
+                <i class="m-1 o-icon fa-solid fa-angle-right"></i>
+            </button>
             <div class="content-collapsible">
                 @foreach (var item2 in item.Lessons)
                 {
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>@item2.LessonName</div>
+                    <div class="panel pt-3 border-bottom d-flex" style="font-size: 16px">
+                        <i class="fa-solid fa-circle-play p-2"></i>
+                        <div class="lessonname">@item2.LessonName</div>
+                        <div class="lessonname-time">03:24 min</div>
+                    </div>
                 }
             </div>
+
         }
     </div>
 </div>
