@@ -17,6 +17,10 @@ namespace CourseOnline.Dao
         public List<Cours> ListAll()
         {
             return db.Courses.Where(x => x.Status == true).OrderBy(x => x.Id).ToList();
-        }
+        }  
+        public List<Category> ListAllCate()
+        {
+            return db.Categories.Where(x => x.Status == true).OrderBy(x => x.Id).ToList();
+        }    
     }
 }

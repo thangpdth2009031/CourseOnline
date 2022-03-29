@@ -50,21 +50,21 @@ namespace CourseOnline.Areas.Admin.Controllers
         // POST: Admin/Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "UserName,Password,RoleId,FullName,Email,Phone,Avatar,DateOfBirth,Gender,Address")] User user)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);                
-        //        user.Password = encryptedMd5Pas;
-        //        user.Status = true;
-        //        user.CreatedAt = DateTime.Now;
-        //        user.UpdatedAt = DateTime.Now;            
-        //        db.Users.Add(user);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "UserName,Password,RoleId,FullName,Email,Phone,Avatar,DateOfBirth,Gender,Address")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
+                user.Password = encryptedMd5Pas;
+                user.Status = true;
+                user.CreatedAt = DateTime.Now;
+                user.UpdatedAt = DateTime.Now;            
+                db.Users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
         //    ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
         //    return View(user);
