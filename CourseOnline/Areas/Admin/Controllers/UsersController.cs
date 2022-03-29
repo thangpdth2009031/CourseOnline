@@ -66,9 +66,9 @@ namespace CourseOnline.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-        //    ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
-        //    return View(user);
-        //}
+            ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
+        return View(user);
+        }
 
         // GET: Admin/Users/Edit/5
         public ActionResult Edit(int? id)

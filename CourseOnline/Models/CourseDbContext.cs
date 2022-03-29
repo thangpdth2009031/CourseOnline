@@ -101,5 +101,7 @@ namespace CourseOnline.Models
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
         }
+
+        public System.Data.Entity.DbSet<CourseOnline.Areas.Admin.Models.RegisterModel> RegisterModels { get; set; }
     }
 }
