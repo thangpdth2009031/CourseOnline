@@ -68,23 +68,23 @@
                                             <th>ParenID</th>
                                             <th>Category</th>
                                             <th>
-                                                @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                                                Name
                                             </th>
                                             <th>
                                                 Image
                                             </th>
                                             <th>
-                                                @Html.ActionLink("Create At", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                                                Create At
                                             </th>
                                             <th>
-                                                @Html.ActionLink("Update At", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:black; font-weight: 900" })
+                                                Update At
                                             </th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
-                                        @foreach (var item in Model.Where(x=>x.Status == true))
+                                        @foreach (var item in Model.Where(x=>x.Status == true).OrderBy(y=>y.ParentId == null))
                                         {
                                         <tr>
                                             <td>
@@ -94,10 +94,10 @@
                                                 @item.Id
                                             </td>
                                             <td>
-                                                ParentId
+                                                @item.ParentId
                                             </td>
                                             <td>
-                                                Category1
+                                                @item.Category1.Name
                                             </td>
                                             <td>
                                                 @item.Name

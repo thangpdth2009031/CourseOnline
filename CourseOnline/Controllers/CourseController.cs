@@ -32,10 +32,33 @@ namespace CourseOnline.Controllers
             var model = new CourseDao().ListAllTopic(id);  */          
             return View(course);
         }
-        public ActionResult ListCourse()
+        public ActionResult ListCourse(int id)
         {
-            return View();
+            var categories = db.Categories.FirstOrDefault(x => x.Id == id);
+            Debug.WriteLine("categories:");
+            Console.WriteLine(categories);
+            return View(categories);
         }
-
+       
+        public ActionResult ListCategory()
+        {
+            var model = new CourseDao().ListAllCate();
+            Debug.WriteLine(model);
+            return View(model);
+        }   
+        public PartialViewResult ListCategoryHeader()
+        {
+            var model = new CourseDao().ListAllCate();
+            Debug.WriteLine(model);
+            return PartialView(model);
+        }
+        [HttpPost]
+        public ActionResult Search(string searchString)
+        {
+            var categories = db.Categories.Where(s => s.Name.Contains(searchString));
+            //OR
+            //var certificate = db.certificate_mst.Search(s => s.CertificateNo, searchString));
+            return View(categories);
+        }
     }
 }

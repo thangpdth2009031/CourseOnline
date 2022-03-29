@@ -56,7 +56,7 @@ namespace CourseOnline.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);                
+                var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
                 user.Password = encryptedMd5Pas;
                 user.Status = true;
                 user.CreatedAt = DateTime.Now;

@@ -66,13 +66,8 @@
 <div class="row m-0">
     <div class="col-md-8 blog-pull-right">
         <div class="single-service" style="padding:10px">
-            <div itemscope="" itemtype="https://schema.org/VideoObject" style="width: 100%">
-
-                @* <video style="width: 100%; padding-top: 10px; margin-top: 50px" controls="">
-            <source src="https://www.youtube.com/embed/BtQynVJcaUo" type="video/mp4">
-        </video>
-        <script src="/FileUploads/files/video/1.mp4"></script>*@
-                <iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" style="width: 100%; padding-top: 10px; margin-top: 50px; height:448.36px" src="https://www.youtube.com/embed/W0vEUmyvthQ?autoplay=1&amp;mute=0&amp;controls=1&amp;origin=https%3A%2F%2Ffullstack.edu.vn&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>
+            <div itemscope="" itemtype="" style="width: 100%">                            
+                <iframe id="urlVideo" style="width: 100%; padding-top: 10px; margin-top: 50px; height:545px" src="https://www.youtube.com/embed/e2mIvJc8GVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          
             </div>
             <h3 class="text-theme-colored" style="padding:15px">@Model.CourseName</h3>
             <div class="container">
@@ -93,25 +88,16 @@
                 </div>
             </div>
             <div id="News" class="tabcontent container">
-
-
-                <div class="content-collapsible">
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
-                </div>
-                <button class="collapsible border-bottom" style="font-size:18px">Chương 2: Hướng dẫn cài đặt môi trường</button>
-                <div class="content-collapsible">
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
-                </div>
-                <button class="collapsible border-bottom" style="font-size:18px">Chương 3: Hướng dẫn cài đặt môi trường</button>
-                <div class="content-collapsible">
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 1: Những gì cần để bắt đầu với Java</div>
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 2: Những gì cần để bắt đầu với Java</div>
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>Bài học 3: Những gì cần để bắt đầu với Java</div>
-                </div>
+                @foreach (var item in Model.Topics)
+                {
+                    <button class="collapsible border-bottom" style="font-size:18px">@item.TopicName</button>
+                    <div class="content-collapsible" id="wrap-lessson">
+                        @foreach (var item2 in item.Lessons)
+                        {
+                            <div title="@item2.UrlFile" class="panel pt-3 border-bottom lesson-click-cl" id="@item2.Id"><i class="fa-solid fa-circle-play p-2"></i>@item2.LessonName</div>
+                        }
+                    </div>
+                }
             </div>
             <div id="Contact" class="tabcontent container col-12" style="text-align:center">
                 <div class="row flex-column">
@@ -131,10 +117,10 @@
         @foreach (var item in Model.Topics)
         {
             <button class="collapsible border-bottom" style="font-size:18px">@item.TopicName</button>
-            <div class="content-collapsible">
+            <div class="content-collapsible" id="wrap-lessson">
                 @foreach (var item2 in item.Lessons)
                 {
-                    <div class="panel pt-3 border-bottom"><i class="fa-solid fa-circle-play p-2"></i>@item2.LessonName</div>
+                    <div title="@item2.UrlFile" class="panel pt-3 border-bottom lesson-click-cl" id="@item2.Id"><i class="fa-solid fa-circle-play p-2"></i>@item2.LessonName</div>                   
                 }
             </div>
         }
@@ -154,7 +140,12 @@
         document.getElementById(pageName).style.display = "block";
         elmnt.style.backgroundColor = color;
     }
-
+    $(document).ready(function () {
+        $(document).on("click", ".lesson-click-cl", function (e) {
+            $("#urlVideo").attr("src", this.title)           
+            
+        });
+    });
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 </script>

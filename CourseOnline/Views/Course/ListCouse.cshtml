@@ -1,4 +1,4 @@
-﻿
+﻿@model CourseOnline.Models.Category
 @{
     ViewBag.Title = "ListCouse";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,11 +19,15 @@
     </div>
 </div>
 <div class="col-12 row">
-    <div class="col-3 text-center" >
+    <div class="col-3 text-center">
         <h4>Danh Mục</h4>
-        <a href="#">
-            <h5 style="box-shadow:0 1px #808080">Ơ</h5>
-        </a>
+       @* @foreach (var item in Model.Category1)
+        {
+            <a href="#">
+                <h5 style="box-shadow:0 1px #808080">@item.</h5>
+            </a>
+        }*@
+       
         <a href="#">
             <h5 style="box-shadow:0 1px #808080">Kìa</h5>
         </a>
@@ -56,24 +60,28 @@
         </a>
     </div>
     <div class="col-9 text-center" style="display:flex; justify-content:center">
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            <div class="team-item bg-light">
-                <div class="overflow-hidden">
-                    <img class="img-fluid" src="/Content/img/team-1.jpg" alt="">
-                </div>
-                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+        @foreach (var item in Model.Cours)
+        {
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="@item.Image" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">@item.CourseName</h5>
+                        @*<small>Designation</small>*@
                     </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-0">Instructor Name</h5>
-                    @*<small>Designation</small>*@
-                </div>
             </div>
-        </div>
+        }
+
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
             <div class="team-item bg-light">
                 <div class="overflow-hidden">

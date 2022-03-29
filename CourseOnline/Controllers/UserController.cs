@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BotDetect.Web.Mvc;
+/*using BotDetect.Web.Mvc;*/
 using CourseOnline.Areas.Admin.Models;
 using CourseOnline.Common;
 using CourseOnline.Dao;
@@ -85,8 +85,8 @@ namespace CourseOnline.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        [CaptchaValidation("CaptchaCode", "registerCapcha", "Mã xác nhận không đúng!")]
+       /* [HttpPost]
+        [CaptchaValidation("CaptchaCode", "registerCapcha", "Mã xác nhận không đúng!")]*/
         public ActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)

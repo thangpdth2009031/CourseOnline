@@ -1,4 +1,5 @@
-﻿<style>
+﻿
+<style>
     /* Style the tab */
     .tab {
         float: left;
@@ -118,14 +119,13 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 
     <a href="#">
-        <img src="~/Content/img/logo-homepage.png" style="width: 134px"/>
-    </a>
-
+        <img src="~/Content/img/logo-homepage.png" style="width: 134px" />
+    </a>    
     <div class="dropdown mx-4">
         <button onclick="myFunction()" class="dropbtn nav-link d-flex mt-1">
-            <h5><i class="fa-solid fa-align-justify m-1 "></i></h5> 
+            <h5><i class="fa-solid fa-align-justify m-1 "></i></h5>
             <div class="m-1"> CATEGORY</div>
-            <i class="fa-solid fa-angle-down icon-dropdown m-2" style=""></i>     
+            <i class="fa-solid fa-angle-down icon-dropdown m-2" style=""></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
             <div class="tab">
@@ -139,10 +139,9 @@
 
             <div class="row">
                 <div class="col-12">
-
                     <div id="London" class="tabcontent">
                         <h5>Ngoại ngữ</h5>
-                        <p>Tiếng anh</p>
+                        <a href="#" class="p-0">Tiếng anh</a>                        
                         <p>Tiếng anh giao tiếp</p>
                         <p>IELTS</p>
                         <p>Phát âm tiếng anh</p>
@@ -192,8 +191,9 @@
         </div>
     </div>
     <div class="form" style="width: 35%">
+      
         <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">       
+        <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">
     </div>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -215,6 +215,6 @@
             @Html.ActionLink("Contact", "Contact", "Home", null, new { @Class = "nav-item nav-link" })
         </div>
         <a href="" class="btn btn-primary p-4 px-lg-5 d-none d-lg-block">Login<i class=" ps-2 fa fa-arrow-right"></i></a>
-    </div>  
+    </div>
 </nav>
 

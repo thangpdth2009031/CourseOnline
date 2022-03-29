@@ -12,6 +12,7 @@ namespace CourseOnline.Models
         public Category()
         {
             Categories1 = new HashSet<Category>();
+            Cours = new HashSet<Cours>();
         }
 
         public int Id { get; set; }
@@ -37,6 +38,7 @@ namespace CourseOnline.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Category> Categories1 { get; set; }
+        public virtual ICollection<Cours> Cours { get; set; }
 
         public virtual Category Category1 { get; set; }
     }
