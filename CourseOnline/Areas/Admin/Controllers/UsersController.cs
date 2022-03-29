@@ -10,7 +10,7 @@ using System.Web.Mvc;
 using CourseOnline.Areas.Admin.Core.Utils;
 using CourseOnline.Common;
 using CourseOnline.Models;
-using PagedList;
+//using PagedList;
 
 namespace CourseOnline.Areas.Admin.Controllers
 {
@@ -66,9 +66,9 @@ namespace CourseOnline.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
-            return View(user);
-        }
+        //    ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
+        //    return View(user);
+        //}
 
         // GET: Admin/Users/Edit/5
         public ActionResult Edit(int? id)
