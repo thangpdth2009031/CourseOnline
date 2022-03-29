@@ -34,7 +34,7 @@
 
 
 
-    .content-collapsible {       
+    .content-collapsible {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
@@ -73,8 +73,8 @@
 <div class="row m-0">
     <div class="col-md-8 blog-pull-right">
         <div class="single-service" style="padding:10px">
-            <div itemscope="" itemtype="" style="width: 100%">                            
-                <iframe id="urlVideo" style="width: 100%; padding-top: 10px; margin-top: 50px; height:545px" src="https://www.youtube.com/embed/e2mIvJc8GVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          
+            <div itemscope="" itemtype="" style="width: 100%">
+                <iframe id="urlVideo" style="width: 100%; padding-top: 10px; margin-top: 50px; height:545px" src="https://www.youtube.com/embed/e2mIvJc8GVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <h3 class="text-theme-colored" style="padding:15px">@Model.CourseName</h3>
             <div class="container">
@@ -101,7 +101,7 @@
                     <div class="content-collapsible" id="wrap-lessson">
                         @foreach (var item2 in item.Lessons)
                         {
-                            <div title="@item2.UrlFile" class="panel pt-3 border-bottom lesson-click-cl" id="@item2.Id"><i class="fa-solid fa-circle-play p-2"></i>@item2.LessonName</div>
+                            <div title="@item2.UrlFile" class="panel p-2 border-bottom lesson-click-cl d-flex" id="@item2.Id"><i class="fa-solid fa-circle-play p-1"></i>@item2.LessonName</div>
                         }
                     </div>
                 }
@@ -131,11 +131,11 @@
             <div class="content-collapsible">
                 @foreach (var item2 in item.Lessons)
                 {
-              <div title="@item2.UrlFile" class="panel pt-3 border-bottom lesson-click-cl" id="@item2.Id" style="font-size: 16px">
-                <i class="fa-solid fa-circle-play p-2"></i>
-                <div class="lessonname">@item2.LessonName</div>
-                <div class="lessonname-time">03:24 min</div>
-              </div>  
+                    <div title="@item2.UrlFile" class="panel p-2 border-bottom lesson-click-cl d-flex" id="@item2.Id" style="font-size: 16px">
+                        <i class="fa-solid fa-circle-play p-1"></i>
+                        <div class="lessonname">@item2.LessonName</div>
+                        <div class="lessonname-time">03:24 min</div>
+                    </div>
                 }
             </div>
         }
@@ -157,8 +157,8 @@
     }
     $(document).ready(function () {
         $(document).on("click", ".lesson-click-cl", function (e) {
-            $("#urlVideo").attr("src", this.title)           
-            
+            $("#urlVideo").attr("src", this.title)
+
         });
     });
     // Get the element with id="defaultOpen" and click on it
