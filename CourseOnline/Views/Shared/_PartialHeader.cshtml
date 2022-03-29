@@ -30,7 +30,7 @@
     /* Style the tab content */
     .tabcontent {
         float: left;
-        padding: 0px 15px;
+        padding: 10px 15px;
         border: none;            
         display: none;
     }
@@ -59,8 +59,8 @@
     }
 
         .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
+           
+            padding: 5px 1px;
             text-decoration: none;
             display: block;
         }
@@ -71,7 +71,16 @@
         display: block;
     }
 
-
+    .a-login {
+        margin: 0px 20px;
+        width: 20%;        
+        border-radius: 50px;
+        height: 50px;
+        padding: 12px 0;
+        color: white;
+        background-color: #06bbcc;        
+        text-align: center;
+    }
  
 
     .height {
@@ -111,6 +120,16 @@
         border-radius: 50px;
     }
 
+    .dopdown-category {
+        background-color: #06bbcc;
+        padding: 5px 10px;
+        border-radius: 50px;
+        color: white;
+    }
+
+    a, .content-category {
+        color: #06bbcc;
+    }
       /*  .form-input:focus {
             border: 1px solid #06bbcc;
         }*/
@@ -122,10 +141,12 @@
     </a>
 
     <div class="dropdown mx-4">
-        <button onclick="myFunction()" class="dropbtn nav-link d-flex mt-1">
-            <h5><i class="fa-solid fa-align-justify m-1 "></i></h5> 
-            <div class="m-1"> CATEGORY</div>
-            <i class="fa-solid fa-angle-down icon-dropdown m-2" style=""></i>     
+        <button onclick="myFunction()" class="dropbtn nav-link dopdown-category mt-1">
+            <div class="mt-2 d-flex">
+                <h5><i class="fa-solid fa-maximize mx-1" style="color: white"></i></h5>
+                <div class="">CATEGORY</div> 
+                <i class="fa-solid fa-angle-down icon-dropdown m-1" style=""></i>
+            </div>    
         </button>
         <div id="myDropdown" class="dropdown-content">
             <div class="tab">
@@ -142,30 +163,30 @@
 
                     <div id="London" class="tabcontent">
                         <h5>Ngoại ngữ</h5>
-                        <p>Tiếng anh</p>
-                        <p>Tiếng anh giao tiếp</p>
-                        <p>IELTS</p>
-                        <p>Phát âm tiếng anh</p>
-                        <p>Ngữ pháp tiếng anh</p>
+                        <a href="" class="content-category">Tiếng anh</a>
+                        <a href="" class="content-category">Tiếng anh giao tiếp</a>
+                        <a href="" class="content-category">IELTS</a>
+                        <a href="" class="content-category">Phát âm tiếng anh</a>
+                        <a href="" class="content-category">Ngữ pháp tiếng anh</a>
                     </div>
 
 
                     <div id="Paris" class="tabcontent">
                         <h5>Nghệ thuật đời sống</h5>
-                        <p>Nấu ăn</p>
-                        <p>Làm đẹp</p>
-                        <p>Pha chết</p>
-                        <p>Giải trí</p>
-                        <p>Không gian sống</p>
+                        <a href="">Nấu ăn</a>
+                        <a href="">Làm đẹp</a>
+                        <a href="">Pha chết</a>
+                        <a href="">Giải trí</a>
+                        <a href="">Không gian sống</a>
                     </div>
 
                     <div id="Tokyo" class="tabcontent">
                         <h5>Ngoại ngữ</h5>
-                        <p>Tiếng anh</p>
-                        <p>Tiếng anh giao tiếp</p>
-                        <p>IELTS</p>
-                        <p>Phát âm tiếng anh</p>
-                        <p>Ngữ pháp tiếng anh</p>
+                        <a href="">Tiếng anh</a>
+                        <a href="">Tiếng anh giao tiếp</a>
+                        <a href="">IELTS</a>
+                        <a href="">Phát âm tiếng anh</a>
+                        <a href="">Ngữ pháp tiếng anh</a>
                     </div>
                     <div id="KinhDoanh" class="tabcontent">
                         <h5>Ngoại ngữ</h5>
@@ -214,7 +235,7 @@
 
             @Html.ActionLink("Contact", "Contact", "Home", null, new { @Class = "nav-item nav-link" })
         </div>
-        <a href="" class="btn btn-primary p-4 px-lg-5 d-none d-lg-block">Login<i class=" ps-2 fa fa-arrow-right"></i></a>
+        <a href="" class=" a-login d-none d-lg-block">Login</a>      
     </div>  
 </nav>
 
