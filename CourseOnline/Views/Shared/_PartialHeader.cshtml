@@ -74,22 +74,36 @@
 
     .a-login {
         margin: 0px 20px;
-        width: 20%;        
-        border-radius: 50px;
-        height: 50px;
-        padding: 12px 0;
+        width: 20%;
+        height: 100%;
+        padding: 9px 0;
         color: white;
-        background-color: #06bbcc;        
+        background-color: #06bbcc;
         text-align: center;
     }
- 
+
+        .a-login:hover {
+            background-color:#09daee;
+        }
+
+    .cd-dropdown-trigger {
+        display: block;
+        position: relative;
+        padding: 0 36px 0 20px;
+        line-height: 40px;
+        background-color: #06bbcc;
+        color: #ffffff;
+        border-radius: 0;
+    }
 
     .height {
         height: 100vh
     }
 
     .form {
-        position: relative
+        position: relative;
+        margin-left: 30px;
+
     }
 
         .form .fa-search {
@@ -117,8 +131,7 @@
 
     .form-input {
         height: 40px;
-        text-indent: 40px;
-        border-radius: 50px;
+        text-indent: 40px;      
     }
 
     .dopdown-category {
@@ -131,7 +144,62 @@
     a, .content-category {
         color: #06bbcc;
     }
-      /*  .form-input:focus {
+
+    .cd-dropdown-content .cd-secondary-dropdown > li {
+        margin: 20px 0;
+        border-right-width: 1px;
+        border-color: #ffff;
+        border-style: solid;
+        padding: 0 30px;
+        height: 250px;
+        width: 100%;
+    }
+
+    .cd-dropdown-content .cd-secondary-dropdown > .see-all a, .cd-dropdown-content .cd-dropdown-gallery > .see-all a, .cd-dropdown-content .cd-dropdown-icons > .see-all a {
+        margin: 0;
+        height: 100%;
+        line-height: 45px;
+        background: #06bbcc;
+        color: #fff;
+        pointer-events: auto;
+        -webkit-transition: color 0.2s, background-color 0.2s;
+        -moz-transition: color 0.2s, background-color 0.2s;
+        transition: color 0.2s, background-color 0.2s;
+    }
+    .no-touch .cd-dropdown-content .cd-secondary-dropdown > .see-all a:hover, .no-touch .cd-dropdown-content .cd-dropdown-gallery > .see-all a:hover, .no-touch .cd-dropdown-content .cd-dropdown-icons > .see-all a:hover {
+        color: #ffffff;
+        background-color: #09daee;
+    }
+    .cd-dropdown-trigger:hover {
+        color: #ffffff;
+    }
+
+    .a-login:hover {
+        color: #ffff
+    }
+
+    .icon-login {
+        margin-right: 4px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        margin-right: 30px;
+        padding: 25px 0;
+        color: #FFFFFF;
+        font-size: 17px;
+        outline: none;
+        text-transform: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: var(--dark);
+        font-weight: 200;
+    }
+    .icon-search {
+        cursor: pointer;
+    }
+
+        /*  .form-input:focus {
             border: 1px solid #06bbcc;
         }*/
 </style>
@@ -139,106 +207,88 @@
 
     <a href="#">
         <img src="~/Content/img/logo-homepage.png" style="width: 134px" />
-    </a>    
-    <div class="dropdown mx-4">
-        <button onclick="myFunction()" class="dropbtn nav-link dopdown-category mt-1">
-            <div class="mt-2 d-flex">
-                <h5><i class="fa-solid fa-maximize mx-1" style="color: white"></i></h5>
-                <div class="">CATEGORY</div> 
-                <i class="fa-solid fa-angle-down icon-dropdown m-1" style=""></i>
-            </div>    
-        </button>
-        <div id="myDropdown" class="dropdown-content">
-            <div class="tab">
-                <button class="tablinks nav-link" onmouseover="openCity(event, 'London')">Ngoại ngữ <i class="fa-solid fa-angle-right dropdown-icon"></i></button>
-                <button class="tablinks nav-link" onmouseover="openCity(event, 'Paris')">Nghệ thuật - Đời sống <i class="fa-solid fa-angle-right dropdown-icon"></i></button>
-                <button class="tablinks nav-link" onmouseover="openCity(event, 'Tokyo')">Phát triển bản thân <i class="fa-solid fa-angle-right dropdown-icon"></i></button>
-                <button class="tablinks nav-link" onmouseover="openCity(event, 'KinhDoanh')">Kinh doanh - Khởi nghiệp <i class="fa-solid fa-angle-right dropdown-icon"></i></button>
-                <button class="tablinks nav-link" onmouseover="openCity(event, 'ThietKe')">Thiết kế <i class="fa-solid fa-angle-right dropdown-icon"></i></button>
-                <button class="tablinks nav-link" onmouseover="openCity(event, 'HonNhat')">Hôn nhân gia đình<i class="fa-solid fa-angle-right dropdown-icon"></i></button>
-            </div>
+    </a>
 
-            <div class="row">
-                <div class="col-12">
-                    <div id="London" class="tabcontent">
-                        <h5>Ngoại ngữ</h5>
-                        <a href="" class="content-category">Tiếng anh</a>
-                        <a href="" class="content-category">Tiếng anh giao tiếp</a>
-                        <a href="" class="content-category">IELTS</a>
-                        <a href="" class="content-category">Phát âm tiếng anh</a>
-                        <a href="" class="content-category">Ngữ pháp tiếng anh</a>
-                    </div>
+    <div class="cd-dropdown-wrapper">
+        <a class="cd-dropdown-trigger" href="#0"><i class="fa-solid fa-maximize mx-1" style="color: white"></i>Danh mục</a>
+        <nav class="cd-dropdown">
+            <h2>Title</h2>
+            <a href="#0" class="cd-close">Close</a>
+            <ul class="cd-dropdown-content">
+                <li>
+                    <form class="cd-search">
+                        <input type="search" placeholder="Search...">
+                    </form>
+                </li>
+                <li class="has-children">
+                    <a href="http://codyhouse.co/?p=748">Clothing</a>
 
+                    <ul class="cd-secondary-dropdown is-hidden">
+                        <li class="go-back"><a href="#0">Menu</a></li>
+                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Clothing</a></li>
+                        <li class="has-children">
+                            <a href="http://codyhouse.co/?p=748">Accessories</a>
 
-                    <div id="Paris" class="tabcontent">
-                        <h5>Nghệ thuật đời sống</h5>
-                        <a href="">Nấu ăn</a>
-                        <a href="">Làm đẹp</a>
-                        <a href="">Pha chết</a>
-                        <a href="">Giải trí</a>
-                        <a href="">Không gian sống</a>
-                    </div>
+                            <ul class="is-hidden">
+                                <li class="go-back"><a href="#0">Clothing</a></li>
+                                <li class="see-all"><a href="http://codyhouse.co/?p=748">All Accessories</a></li>
+                                <li class="has-children">
+                                    <a href="#0">Beanies</a>
 
-                    <div id="Tokyo" class="tabcontent">
-                        <h5>Ngoại ngữ</h5>
-                        <a href="">Tiếng anh</a>
-                        <a href="">Tiếng anh giao tiếp</a>
-                        <a href="">IELTS</a>
-                        <a href="">Phát âm tiếng anh</a>
-                        <a href="">Ngữ pháp tiếng anh</a>
-                    </div>
-                    <div id="KinhDoanh" class="tabcontent">
-                        <h5>Ngoại ngữ</h5>
-                        <p>Tiếng anh</p>
-                        <p>Tiếng anh giao tiếp</p>
-                        <p>IELTS</p>
-                        <p>Phát âm tiếng anh</p>
-                        <p>Ngữ pháp tiếng anh</p>
-                    </div>
-                    <div id="ThietKe" class="tabcontent">
-                        <h5>Ngoại ngữ</h5>
-                        <p>Tiếng anh</p>
-                        <p>Tiếng anh giao tiếp</p>
-                        <p>IELTS</p>
-                        <p>Phát âm tiếng anh</p>
-                        <p>Ngữ pháp tiếng anh</p>
-                    </div>
-                    <div id="HonNhat" class="tabcontent">
-                        <h3>Tokyo</h3>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                                    <ul class="is-hidden">
+                                        <li class="go-back"><a href="#0">Accessories</a></li>
+                                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Benies</a></li>
+                                        <li><a href="http://codyhouse.co/?p=748">Caps &amp; Hats</a></li>
+                                        <li><a href="http://codyhouse.co/?p=748">Gifts</a></li>
+                                        <li><a href="http://codyhouse.co/?p=748">Scarves &amp; Snoods</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#0">Caps &amp; Hats</a>
+
+                                    <ul class="is-hidden">
+                                        <li class="go-back"><a href="#0">Accessories</a></li>
+                                        <li class="see-all"><a href="http://codyhouse.co/?p=748">All Caps &amp; Hats</a></li>
+                                        <li><a href="http://codyhouse.co/?p=748">Beanies</a></li>
+                                        <li><a href="http://codyhouse.co/?p=748">Caps</a></li>
+                                        <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="http://codyhouse.co/?p=748">Glasses</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Gloves</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Jewellery</a></li>
+                                <li><a href="http://codyhouse.co/?p=748">Scarves</a></li>
+                            </ul>
+                        </li>
+
+                     
+                    </ul> <!-- .cd-secondary-dropdown -->
+                </li> <!-- .has-children -->
+         
+            </ul> <!-- .cd-dropdown-content -->
+        </nav> <!-- .cd-dropdown -->
+    </div> <!-- .cd-dropdown-wrapper -->
     <div class="form" style="width: 35%">
         @using (Html.BeginForm("Search", "Cours"))
-            {
+        {
 
-            }
-            <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">
+        }
+        <i class="fa fa-search icon-search"></i>
+        <input type="text" class="form-control form-input" placeholder="Tìm kiếm..." style="background-color: #f0fbfc;">
     </div>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            @Html.ActionLink("Home", "Index", "Home", null, new { @Class = "nav-item nav-link" })
+            @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @Class = "nav-item nav-link" })
 
-            @Html.ActionLink("Abount", "About", "Home", null, new { @Class = "nav-item nav-link" })
-            @Html.ActionLink("Course", "Course", "Home", null, new { @Class = "nav-item nav-link" })
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu fade-down m-0">
-                    @Html.ActionLink("Our Team", "Team", "Home", null, new { @Class = "dropdown-item" })
-                    @Html.ActionLink("Testimonial", "Testimonial", "Home", null, new { @Class = "dropdown-item" })
-                </div>
-            </div>
+            @Html.ActionLink("Về chúng tôi", "About", "Home", null, new { @Class = "nav-item nav-link" })
+            @Html.ActionLink("Khóa học", "Course", "Home", null, new { @Class = "nav-item nav-link" })         
 
-            @Html.ActionLink("Contact", "Contact", "Home", null, new { @Class = "nav-item nav-link" })
+            @Html.ActionLink("Liên hệ", "Contact", "Home", null, new { @Class = "nav-item nav-link" })
         </div>
-        <a href="" class=" a-login d-none d-lg-block">Login</a>      
-    </div>  
+        <a href="/User/Login" class="m a-login d-none d-lg-block"><i class="icon-login fa-solid fa-arrow-right-to-bracket"></i>Đăng nhập</a>
+    </div>
 </nav>
 
