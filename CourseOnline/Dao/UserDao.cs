@@ -21,6 +21,7 @@ namespace CourseOnline.Dao
         {
             try
             {
+                user.RoleId = 1;
                 db.Users.Add(user);
                 db.SaveChanges();
             }

@@ -5,7 +5,16 @@
 }
 <style>
     .bsd {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+        background-color: #f6f6f6;
+    }
+
+    .course-image {
+        background-color: #cccccc;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
     }
 </style>
 <div class="container-fluid bg-primary py-5 mb-5 page-header">
@@ -23,65 +32,66 @@
         </div>
     </div>
 </div>
-<div class="bsd d-flex container p-2">
-    @if (Model.Count > 0)
-    {
-        <div class="" style="width: 100%; margin-right: 20px">
-            <h4 style="padding: 15px;">Danh Mục Con</h4>
-            <div class="form mb-3">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #efefef;">
-            </div>
-            @foreach (var item in Model)
-            {
-                <a href="/Course/ListCourse?id=@item.Id">
-                    <p style="box-shadow: 0 1px #dbdbdb; padding: 8px; color: black ">@item.Category.Name (22)</p>
-                </a>
-            }
-        </div>
-        <div class="text-center" style="display:flex; justify-content:center">
-            <div class="row">
+<div class="bsd">
+    <div class="flex">
+        @if (Model.Count > 0)
+        {
+            <div class="col-2" style="margin: 0 30px">
+                <h4 style="text-align:center; margin: 20px">Danh Mục Con</h4>
+                <div class="form mb-3">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #efefef;">
+                </div>
                 @foreach (var item in Model)
                 {
-                    <div class="col-lg-4 col-md-6 wow p-3 fadeInUp" data-wow-delay="0.1s">
-                        <div class="course-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="@item.Image" alt="">
-                                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                    <a href="/Course/Detail?id=@item.Id" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                    @* @Html.ActionLink("Read More", "Detail", "Course", new { @class = "flex-shrink-0 btn btn-sm btn-primary px-3 border-end", @style = "border-radius: 30px 0 0 30px;" })*@
-                                    <a href="/Course/Detail?id=@item.Id" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 pb-0">
-                                <h3 class="mb-0">$@item.Price</h3>
-                                <div class="mb-3">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small>(123)</small>
-                                </div>
-                                <h5 class="mb-4"> @item.CourseName</h5>
-                            </div>
-                            <div class="d-flex border-top">
-                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                                <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="/Course/ListCourse?id=@item.Id">
+                        <p style="box-shadow: 0 1px #dbdbdb; padding: 20px 0px 5px 0; color: black ">@item.Category.Name (22)</p>
+                    </a>
                 }
             </div>
-        </div>
-    }
-    else
-    {
-        <div style="margin: 0 auto; width:30%">
-            <img style="width:100%;" id="keywordNotFoundIcon" src="https://res.cloudinary.com/phamthanghehe/image/upload/v1648631366/mjlppfjawxbpxc6mbced.png" alt="Course not found">
-            <p style="font-size: 40px; color: #07bbcc; text-align:center">Không tìm thấy khóa học nào </p>
-        </div>
-    }
+            <div class="col-9">               
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-6 wow p-3 fadeInUp" data-wow-delay="0.1s">
+                                <div class="course-item bg-light">
+                                    <div class="position-relative overflow-hidden">
+
+                                        <div class="course-image" style="background-image: url(@item.Image)"></div>
+                                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                            <a href="/Course/Detail?id=@item.Id" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                            @* @Html.ActionLink("Read More", "Detail", "Course", new { @class = "flex-shrink-0 btn btn-sm btn-primary px-3 border-end", @style = "border-radius: 30px 0 0 30px;" })*@
+                                            <a href="/Course/Detail?id=@item.Id" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center p-4 pb-0">
+                                        <h3 class="mb-0">@item.Price đ</h3>
+                                        <div class="mb-3">
+                                            <small class="fa fa-star text-primary"></small>
+                                            <small class="fa fa-star text-primary"></small>
+                                            <small class="fa fa-star text-primary"></small>
+                                            <small class="fa fa-star text-primary"></small>
+                                            <small class="fa fa-star text-primary"></small>
+                                            <small>(123)</small>
+                                        </div>
+                                        <h5 class="mb-2" style="height: 60px"> @item.CourseName</h5>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>                
+            </div>
+        }
+        else
+        {
+            <div style="margin: 0 auto; width:30%">
+                <img style="width:100%;" id="keywordNotFoundIcon" src="https://res.cloudinary.com/phamthanghehe/image/upload/v1648631366/mjlppfjawxbpxc6mbced.png" alt="Course not found">
+                <p style="font-size: 40px; color: #07bbcc; text-align:center">Không tìm thấy khóa học nào </p>
+            </div>
+        }
+    </div>
 </div>
-
-
