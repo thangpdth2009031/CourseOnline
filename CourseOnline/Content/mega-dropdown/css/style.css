@@ -42,12 +42,13 @@ header {
 }
 
 .cd-dropdown-wrapper {
-  display: inline-block;
-  position: relative;
-  height: 40px;
-  margin: 0 25px;
- 
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    margin: 0 50px 0 25px;
 }
+ 
+
 
 .no-touch .cd-dropdown-trigger:hover {
     background-color: #13d0e2;
