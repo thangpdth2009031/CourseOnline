@@ -25,16 +25,17 @@
         public string UserName { get; set; }
         [Required(ErrorMessage = "Please enter your password")]
         
-        [StringLength(50, ErrorMessage = "Maximum 50 characters")]
+        [StringLength(250, ErrorMessage = "Maximum 250 characters")]
         [DataType(DataType.Password)]
         [Display(Name = "Password: ")]
 
-        [RegularExpression(@"^.{6,}$", ErrorMessage = "Minimum 6 characters required")]
+        // [RegularExpression(@"^.{6,}$", ErrorMessage = "Minimum 6 characters required")]
         public string Password { get; set; }
 
         public int RoleId { get; set; }
 
         [Required(ErrorMessage = "Please enter your full name")]
+        [StringLength(250, ErrorMessage = "Maximum 250 characters")]
         public string FullName { get; set; }
         
         [StringLength(250)]
@@ -48,8 +49,7 @@
 
         public string Avatar { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         public int Gender { get; set; }
 

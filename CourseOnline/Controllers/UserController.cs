@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,8 +12,11 @@ using CourseOnline.Models;
 
 namespace CourseOnline.Controllers
 {
+    
     public class UserController : Controller
     {
+        private CourseDbContext db = new CourseDbContext();
+        
         // private Uri RedirectUri
         // {
         //     get
@@ -84,9 +88,10 @@ namespace CourseOnline.Controllers
 
             return View(model);
         }
-
-       /* [HttpPost]
-        [CaptchaValidation("CaptchaCode", "registerCapcha", "Mã xác nhận không đúng!")]*/
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        // [CaptchaValidation("CaptchaCode", "registerCapcha", "Mã xác nhận không đúng!")]*/
         public ActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)
@@ -103,13 +108,20 @@ namespace CourseOnline.Controllers
                 else
                 {
                     var user = new User();
-                    user.FullName = model.Name;
+                    user.UserName = model.UserName;
+                    user.FullName = model.FullName;
                     user.Password = Encryptor.MD5Hash(model.Password);
                     user.Phone = model.Phone;
                     user.Email = model.Email;
                     user.Address = model.Address;
-                    user.CreatedAt = DateTime.Now;
+                    user.Avatar = "/aaaaa/aaa";
+                    user.Gender = 1;
+                    user.DateOfBirth = DateTime.Now;
                     user.Status = true;
+
+                    // db.Users.Add(user);
+                    // db.SaveChanges();
+                    
                     // if (!string.IsNullOrEmpty(model.ProvinceID))
                     // {
                     //     user. = int.Parse(model.ProvinceID);
@@ -118,7 +130,7 @@ namespace CourseOnline.Controllers
                     // {
                     //     user.DistrictID = int.Parse(model.DistrictID);
                     // }
-
+                    Debug.WriteLine(user.FullName);
                     var result = dao.Insert(user);
                     if (result > 0)
                     {
