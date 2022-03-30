@@ -166,7 +166,6 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Cours.cs" />
     <Compile Include="Models\CourseDbContext.cs" />
-    <Compile Include="Models\CourseViewModel.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Order.cs" />
@@ -174,6 +173,7 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\CourseViewModel.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2215,7 +2215,7 @@
     <Content Include="Content\lib\wow\wow.js" />
     <Content Include="Content\lib\wow\wow.min.js" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="DB\courseonline-script.sql" />
+    <Content Include="DB\course-update-script.sql" />
     <Content Include="favicon.ico" />
     <Content Include="FileUploads\files\btap.txt" />
     <Content Include="FileUploads\files\doc\UserProfile.txt" />
@@ -2797,7 +2797,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Course\ListCategory.cshtml" />
-    <Content Include="Views\Course\ListCategoryHeader.cshtml" />
+    <Content Include="Views\Course\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
