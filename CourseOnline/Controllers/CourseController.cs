@@ -52,13 +52,18 @@ namespace CourseOnline.Controllers
             Debug.WriteLine(model);
             return PartialView(model);
         }
-        [HttpPost]
-        public ActionResult Search(string searchString)
-        {
-            var categories = db.Categories.Where(s => s.Name.Contains(searchString));
-            //OR
-            //var certificate = db.certificate_mst.Search(s => s.CertificateNo, searchString));
-            return View(categories);
+        /*  [HttpPost]
+          public ActionResult Search(string searchString)
+          {
+              var course = db.Courses.Where(s => s.CourseName.Contains(searchString));
+              //OR
+              //var certificate = db.certificate_mst.Search(s => s.CertificateNo, searchString));
+              return View(course);
+          }*/
+        public ActionResult Search(string keyword)
+        {            
+            var model = new CourseDao().Search(keyword);              
+            return View(model);
         }
     }
 }

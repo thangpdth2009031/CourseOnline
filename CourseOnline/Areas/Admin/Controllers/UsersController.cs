@@ -67,7 +67,7 @@ namespace CourseOnline.Areas.Admin.Controllers
             }
 
             ViewBag.RoleId = new SelectList(db.Roles, "Id", "Name", user.RoleId);
-        return View(user);
+            return View(user);
         }
 
         // GET: Admin/Users/Edit/5

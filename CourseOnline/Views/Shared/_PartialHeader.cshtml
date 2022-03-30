@@ -211,14 +211,12 @@
             </div>
         </div>
     </div>
-    <div class="form" style="width: 35%">
-        @using (Html.BeginForm("Search", "Cours"))
-            {
-
-            }
+        @using (Html.BeginForm("Search", "Course", FormMethod.Post, new { @class = "form", @style = "width: 35%;" }))
+        {
             <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">
-    </div>
+            <input type="text" name="keyword" class="form-control form-input" placeholder="Search..." style="background-color: #f0fbfc;">            
+        }
+
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -226,7 +224,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             @Html.ActionLink("Home", "Index", "Home", null, new { @Class = "nav-item nav-link" })
 
-            @Html.ActionLink("Abount", "About", "Home", null, new { @Class = "nav-item nav-link" })
+            @Html.ActionLink("About", "About", "Home", null, new { @Class = "nav-item nav-link" })
             @Html.ActionLink("Course", "Course", "Home", null, new { @Class = "nav-item nav-link" })
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -238,7 +236,17 @@
 
             @Html.ActionLink("Contact", "Contact", "Home", null, new { @Class = "nav-item nav-link" })
         </div>
-        <a href="" class=" a-login d-none d-lg-block">Login</a>      
+       @* @Html.ActionLink("Login", "Login", "User", null, new { @Class = "nav-item nav-link a-login d-none d-lg-block" })*@
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" style="color:black;" data-bs-toggle="dropdown" style="colorblack">
+                <img src="~/Content/img/5f660a6763af6a0025a73587.jpg" class="mx-2" style="width: 28%" /><div >UserName</div>
+            </a>
+            <div class="dropdown-menu fade-down m-0">
+                @Html.ActionLink("Profile", "Profile", "User", null, new { @Class = "dropdown-item" })
+                @Html.ActionLink("Logout", "Logout", "User", null, new { @Class = "dropdown-item" })
+
+            </div>
+        </div>
     </div>  
 </nav>
 
