@@ -1,6 +1,5 @@
 ﻿@{var session = (CourseOnline.Models.User)Session[CourseOnline.Common.CommonConstants.USER_SESSION]; }
-<style>
-    /* Style the tab */
+<style>   
     .tab {
         float: left;
         background-color: #f1f1f1;
@@ -11,7 +10,8 @@
         float: right;
         margin: 4px 0px 0px 20px;
     }
-    /* Style the buttons inside the tab */
+
+   
     .tab button {
         display: block;
         background-color: inherit;
@@ -24,11 +24,6 @@
         cursor: pointer;
         font-size: 17px;
     }
-
-    /* Change background color of buttons on hover */
-
-
-    /* Style the tab content */
     .tabcontent {
         padding: 10px 15px;
         border: none;
@@ -208,10 +203,11 @@
     .navbar .dropdown-toggle::after {
         border: none;
         content: "";
-    }
-    /*  .form-input:focus {
-            border: 1px solid #06bbcc;
-        }*/
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+  }
 </style>
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="/">
@@ -241,16 +237,19 @@
         }
         else
         {
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" style="color:black; padding:0;" data-bs-toggle="dropdown">
-                    <img style="background-image:url(@session.Avatar); background-size:cover;background-repeat:no-repeat;height:60px;width:60px; border-radius:50%;margin-right:15px" />
-                </a>
-                <div class="dropdown-menu fade-down m-0" style=" left: 88%;">
-                    @Html.ActionLink("Tài khoản", "AccountProfile", "Account", null, new { @Class = "dropdown-item" })
-                    @Html.ActionLink("Đăng xuất", "Logout", "User", null, new { @Class = "dropdown-item" })
-
-                </div>
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" style="color:black; padding:0;" data-bs-toggle="dropdown">
+            <img style="background-image:url(@session.Avatar); background-size:cover;background-repeat:no-repeat;height:60px;width:60px; border-radius:50%;margin-right:15px" />
+        </a>        
+        <div class="dropdown-menu fade-down m-0" style=" left: 88%;">
+            <div class="d-flex">
+                <i class="fa-solid fa-user" style="padding: 3px 0px 5px 5px"></i>@Html.ActionLink("Tài khoản", "AccountProfile", "Account", null, new { @Class = "dropdown-item" })
             </div>
+            <div class="d-flex">
+                <i class="fa-solid fa-arrow-right-from-bracket"  style="padding: 6px 0px 5px 5px"></i>@Html.ActionLink("Đăng xuất", "Logout", "User", null, new { @Class = "dropdown-item" })
+            </div>
+        </div>
+    </div>
         }
     </div>
 </nav>

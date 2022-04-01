@@ -11,6 +11,11 @@
         padding: 20px;
         background-color: #eeeeee;
     }
+    .register {
+        width: 100%;
+        padding: 11px 0;
+        border-radius: 5px;
+    }
 </style>
 
 <div class="content">
@@ -45,12 +50,14 @@
             </div>
 
             <div class="form-group">
-                <div class="">
+                <div>
                     <input type="submit" value="Đăng nhập" class="btn btn-default" style="background-color: #06bbcc" />
-                    @*<a class="btn btn-facebook" href="/User/LoginFacebook">
-                    <i class="fa fa-facebook"></i>
-                    Đăng nhập bằng Facebook
-                </a>*@
+                    <div class="col-12">
+                        <a class="btn btn-danger register" href="/User/Register">
+                            
+                            Đăng ký
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
