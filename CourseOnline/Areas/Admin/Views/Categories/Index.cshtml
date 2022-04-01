@@ -89,7 +89,7 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach (var item in Model.Where(x=>x.Status == true).OrderBy(y=>y.ParentId == null))
+                                        @foreach (var item in Model.Reverse().Where(x=>x.Status == true).OrderBy(y=>y.ParentId == null))
                                         {
                                         <tr>
                                             <td>

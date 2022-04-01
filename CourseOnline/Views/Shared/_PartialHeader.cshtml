@@ -24,8 +24,6 @@
         cursor: pointer;
         font-size: 17px;
     }
-
-
     .tabcontent {
         padding: 10px 15px;
         border: none;
@@ -209,15 +207,13 @@
         font-weight: 900;
         vertical-align: middle;
         margin-left: 8px;
-        /*  .form-input:focus {
-            border: 1px solid #06bbcc;
-        }*/
+  }
 </style>
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="/">
         <img src="~/Content/img/logo-homepage.png" style="width: 134px" />
     </a>
-    @{Html.RenderAction("ListCategory", "Course");}    
+    @{Html.RenderAction("ListCategory", "Course");}
     @using (Html.BeginForm("Search", "Course", FormMethod.Post, new { @class = "form", @style = "width: 35%;" }))
     {
         <i class="fa fa-search"></i>
@@ -243,7 +239,7 @@
         {
     <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" style="color:black; padding:0;" data-bs-toggle="dropdown">
-            <img src="~/Content/img/5f660a6763af6a0025a73587.jpg" class="mx-2" style="width: 35%" />
+            <img style="background-image:url(@session.Avatar); background-size:cover;background-repeat:no-repeat;height:60px;width:60px; border-radius:50%;margin-right:15px" />
         </a>        
         <div class="dropdown-menu fade-down m-0" style=" left: 88%;">
             <div class="d-flex">
