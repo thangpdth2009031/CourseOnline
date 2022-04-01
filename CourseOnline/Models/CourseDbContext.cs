@@ -16,8 +16,7 @@ namespace CourseOnline.Models
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Cours> Courses { get; set; }
         public virtual DbSet<Language> Languages { get; set; }
-        public virtual DbSet<Lesson> Lessons { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Lesson> Lessons { get; set; }        
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
@@ -33,11 +32,6 @@ namespace CourseOnline.Models
                 .HasMany(e => e.Categories1)
                 .WithRequired(e => e.Category1)
                 .HasForeignKey(e => e.ParentId);
-
-            /*modelBuilder.Entity<Category>()
-                .HasMany(e => e.Courses)
-                .WithRequired(e => e.Category)
-                .WillCascadeOnDelete(false);*/
 
             modelBuilder.Entity<Cours>()
                 .Property(e => e.Image)
@@ -60,11 +54,6 @@ namespace CourseOnline.Models
             modelBuilder.Entity<Lesson>()
                 .Property(e => e.UrlFile)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.OrderDetails)
-                .WithRequired(e => e.Order)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Role>()
                 .Property(e => e.Name)
