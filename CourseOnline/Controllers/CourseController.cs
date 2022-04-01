@@ -34,17 +34,17 @@ namespace CourseOnline.Controllers
         }
         public ActionResult ListCourse(int id)
         {
-            var categories = db.Categories.FirstOrDefault(x => x.Id == id);
+            var categories = db.Categories.Find(id);
             Debug.WriteLine("categories:");
             Console.WriteLine(categories);
             return View(categories);
         }
-       
-        public ActionResult ListCategory()
+        [ChildActionOnly]
+        public PartialViewResult ListCategory()
         {
             var model = new CourseDao().ListAllCate();
-            Debug.WriteLine(model);
-            return View(model);
+            Debug.WriteLine(model);            
+            return PartialView(model);
         }   
         public PartialViewResult ListCategoryHeader()
         {
