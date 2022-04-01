@@ -1,4 +1,4 @@
-﻿
+﻿@{var session = (CourseOnline.Models.User)Session[CourseOnline.Common.CommonConstants.USER_SESSION]; }
 <style>
     /* Style the tab */
     .tab {
@@ -25,19 +25,18 @@
         font-size: 17px;
     }
 
-            /* Change background color of buttons on hover */
+    /* Change background color of buttons on hover */
 
 
     /* Style the tab content */
-    .tabcontent {
-        float: left;
+    .tabcontent {      
         padding: 10px 15px;
-        border: none;            
+        border: none;
         display: none;
     }
 
     .dropbtn {
-        background-color: white;    
+        background-color: white;
         padding: 5px;
         font-size: 15px;
         border: none;
@@ -60,7 +59,6 @@
     }
 
         .dropdown-content a {
-           
             padding: 5px 1px;
             text-decoration: none;
             display: block;
@@ -83,7 +81,7 @@
     }
 
         .a-login:hover {
-            background-color:#09daee;
+            background-color: #09daee;
         }
 
     .cd-dropdown-trigger {
@@ -102,7 +100,7 @@
         height: 40px;
         margin: 0 50px 0 25px;
     }
- 
+
 
     .height {
         height: 100vh
@@ -110,8 +108,6 @@
 
     .form {
         position: relative;
-       
-
     }
 
         .form .fa-search {
@@ -139,7 +135,7 @@
 
     .form-input {
         height: 40px;
-        text-indent: 40px;      
+        text-indent: 40px;
     }
 
     .dopdown-category {
@@ -174,10 +170,12 @@
         -moz-transition: color 0.2s, background-color 0.2s;
         transition: color 0.2s, background-color 0.2s;
     }
+
     .no-touch .cd-dropdown-content .cd-secondary-dropdown > .see-all a:hover, .no-touch .cd-dropdown-content .cd-dropdown-gallery > .see-all a:hover, .no-touch .cd-dropdown-content .cd-dropdown-icons > .see-all a:hover {
         color: #ffffff;
         background-color: #09daee;
     }
+
     .cd-dropdown-trigger:hover {
         color: #ffffff;
     }
@@ -203,20 +201,23 @@
         color: var(--dark);
         font-weight: 200;
     }
+
     .icon-search {
         cursor: pointer;
     }
-
-        /*  .form-input:focus {
+    .navbar .dropdown-toggle::after {
+        border: none;
+        content: "";
+       
+    }
+    /*  .form-input:focus {
             border: 1px solid #06bbcc;
         }*/
 </style>
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-
-    <a href="#">
+    <a href="/">
         <img src="~/Content/img/logo-homepage.png" style="width: 134px" />
     </a>
-
     <div class="cd-dropdown-wrapper">
         <a class="cd-dropdown-trigger" href="#0"><i class="fa-solid fa-maximize mx-1" style="color: white"></i>Danh mục</a>
         <nav class="cd-dropdown">
@@ -269,18 +270,18 @@
                             </ul>
                         </li>
 
-                     
+
                     </ul> <!-- .cd-secondary-dropdown -->
                 </li> <!-- .has-children -->
-         
+
             </ul> <!-- .cd-dropdown-content -->
         </nav> <!-- .cd-dropdown -->
-    </div> <!-- .cd-dropdown-wrapper -->   
-      @using (Html.BeginForm("Search", "Course", FormMethod.Post, new { @class = "form", @style = "width: 35%;" }))
-        {
-            <i class="fa fa-search"></i>
-            <input type="text" name="keyword" class="form-control form-input" placeholder="Tìm kiếm..." style="background-color: #f0fbfc;">            
-        }
+    </div> <!-- .cd-dropdown-wrapper -->
+    @using (Html.BeginForm("Search", "Course", FormMethod.Post, new { @class = "form", @style = "width: 35%;" }))
+    {
+        <i class="fa fa-search"></i>
+        <input type="text" name="keyword" class="form-control form-input" placeholder="Tìm kiếm..." style="background-color: #f0fbfc;">
+    }
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -289,21 +290,28 @@
             @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @Class = "nav-item nav-link" })
 
             @Html.ActionLink("Về chúng tôi", "About", "Home", null, new { @Class = "nav-item nav-link" })
-            @Html.ActionLink("Khóa học", "Course", "Home", null, new { @Class = "nav-item nav-link" })         
+            @Html.ActionLink("Khóa học", "Course", "Home", null, new { @Class = "nav-item nav-link" })
 
             @Html.ActionLink("Liên hệ", "Contact", "Home", null, new { @Class = "nav-item nav-link" })
         </div>
-        <a href="/User/Login" class="m a-login d-none d-lg-block"><i class="icon-login fa-solid fa-arrow-right-to-bracket"></i>Đăng nhập</a>
+        @if (session == null)
+        {
+            <a href="/User/Login" class="m a-login d-none d-lg-block"><i class="icon-login fa-solid fa-arrow-right-to-bracket"></i>Đăng nhập</a>
+        }
+        else
+        {
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" style="color:black; padding:0;" data-bs-toggle="dropdown">
+            <img src="~/Content/img/5f660a6763af6a0025a73587.jpg" class="mx-2" style="width: 35%" />
+        </a>        
+        <div class="dropdown-menu fade-down m-0" style=" left: 88%;">
+            @Html.ActionLink("Tài khoản", "AccountProfile", "Account", null, new { @Class = "dropdown-item" })
+            @Html.ActionLink("Đăng xuất", "Logout", "User", null, new { @Class = "dropdown-item" })
+            
+        </div>
     </div>
-      @*<div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" style="color:black;" data-bs-toggle="dropdown" style="colorblack">
-                <img src="~/Content/img/5f660a6763af6a0025a73587.jpg" class="mx-2" style="width: 28%" /><div >UserName</div>
-            </a>
-            <div class="dropdown-menu fade-down m-0">
-                @Html.ActionLink("Profile", "Profile", "User", null, new { @Class = "dropdown-item" })
-                @Html.ActionLink("Logout", "Logout", "User", null, new { @Class = "dropdown-item" })
+        }
+    </div>
 
-            </div>
-        </div>*@
 </nav>
 
