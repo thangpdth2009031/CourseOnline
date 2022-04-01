@@ -1,6 +1,5 @@
 ﻿@{var session = (CourseOnline.Models.User)Session[CourseOnline.Common.CommonConstants.USER_SESSION]; }
-<style>
-    /* Style the tab */
+<style>   
     .tab {
         float: left;
         background-color: #f1f1f1;
@@ -11,7 +10,8 @@
         float: right;
         margin: 4px 0px 0px 20px;
     }
-    /* Style the buttons inside the tab */
+
+   
     .tab button {
         display: block;
         background-color: inherit;
@@ -25,11 +25,8 @@
         font-size: 17px;
     }
 
-    /* Change background color of buttons on hover */
 
-
-    /* Style the tab content */
-    .tabcontent {      
+    .tabcontent {
         padding: 10px 15px;
         border: none;
         display: none;
@@ -154,7 +151,7 @@
         border-right-width: 1px;
         border-color: #ffff;
         border-style: solid;
-        padding: 0 30px;       
+        padding: 0 30px;
         width: 100%;
     }
 
@@ -204,12 +201,15 @@
     .icon-search {
         cursor: pointer;
     }
+
     .navbar .dropdown-toggle::after {
         border: none;
         content: "";
-       
-    }
-    /*  .form-input:focus {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+        /*  .form-input:focus {
             border: 1px solid #06bbcc;
         }*/
 </style>
@@ -246,9 +246,12 @@
             <img src="~/Content/img/5f660a6763af6a0025a73587.jpg" class="mx-2" style="width: 35%" />
         </a>        
         <div class="dropdown-menu fade-down m-0" style=" left: 88%;">
-            @Html.ActionLink("Tài khoản", "AccountProfile", "Account", null, new { @Class = "dropdown-item" })
-            @Html.ActionLink("Đăng xuất", "Logout", "User", null, new { @Class = "dropdown-item" })
-            
+            <div class="d-flex">
+                <i class="fa-solid fa-user" style="padding: 3px 0px 5px 5px"></i>@Html.ActionLink("Tài khoản", "AccountProfile", "Account", null, new { @Class = "dropdown-item" })
+            </div>
+            <div class="d-flex">
+                <i class="fa-solid fa-arrow-right-from-bracket"  style="padding: 6px 0px 5px 5px"></i>@Html.ActionLink("Đăng xuất", "Logout", "User", null, new { @Class = "dropdown-item" })
+            </div>
         </div>
     </div>
         }

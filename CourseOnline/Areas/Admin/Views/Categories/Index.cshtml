@@ -6,7 +6,13 @@
 }
 
 
-
+<style>
+    .icon-list {
+        color: white;
+        background-color: #5a67ff;
+        padding: 8px;
+    }
+</style>
 
 
 <div class="page-wrapper">
@@ -46,16 +52,15 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">List Categories</h5>
+                        <h5 class="card-title">Danh mục</h5>
                 
                         @using (Html.BeginForm("DeleteConfirmed", "Categories", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
 
                             <p>
-                                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Show all", "all", null, new { @class = "btn btn-info" })
-                                <input type="submit" value="Delete Selected Students" onclick="return confirm('Are you sure you wish to delete selected Students?');" class="btn btn-danger" />
+                                @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })                                
+                                <input type="submit" value="Xóa bỏ" onclick="return confirm('Are you sure you wish to delete selected Students?');" class="btn btn-danger" />
                             </p>
 
                             <div class="table-responsive">
@@ -73,13 +78,13 @@
                                             <th>
                                                 Image
                                             </th>
-                                            <th>
+                                            @*<th>
                                                 Create At
                                             </th>
                                             <th>
                                                 Update At
-                                            </th>
-                                            <th>Status</th>
+                                            </th>*@
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -106,17 +111,23 @@
                                                 <img src="@item.Image" alt="Alternate Text" style="height:50px; width:50px" />
                                             </td>
 
-                                            <td>
+                                            @*<td>
                                                 @item.CreatedAt
                                             </td>
                                             <td>
                                                 @item.UpdatedAt
-                                            </td>
+                                            </td>*@
 
                                             <td>
-                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                                <div class="d-flex">
+                                                    <a class="m-2" href="/Admin/Cours/Edit/@item.Id">
+                                                        <h5><i class="fa-solid fa-pen icon-list"></i></h5>
+                                                    </a>                                                    
+                                                    <a class="m-2" href="/Admin/Cours/Details/@item.Id">
+                                                        <h5><i class="fa-solid fa-circle-info icon-list"></i></h5>
+                                                    </a>
+                                                </div>
+
                                             </td>
                                         </tr>
 

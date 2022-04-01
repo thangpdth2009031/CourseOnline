@@ -6,29 +6,89 @@
     ViewBag.Genders = new SelectList(GenderKey.GetDic(), "Key", "Value");
 
 }
-<div class="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            @using (Html.BeginForm("Create", "Users", FormMethod.Post, new { enctype = "multipart/form-data"}))
+
+<style>
+    input {
+        width: 100%;
+        padding: 8px 0;
+    }
+</style>
+<div class="page-wrapper mt-3" style="background-color: white">
+    <div class="container">
+        <div class="">
+            @using (Html.BeginForm("Create", "Users", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
                 <div class="form-horizontal">
-                    <h4>User</h4>
+                    <h4>Thêm mới tài khoản</h4>
                     <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label" })
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control form-create" } })
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -40,44 +100,45 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                    @*<div class="col-md-9">
+                            <select class="select2 form-select shadow-none"
+                                    style="width: 100%; height: 36px">
+                                <option>Select</option>
+                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI">Hawaii</option>
+                                </optgroup>
+                            </select>
+                        </div>*@
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
+                        <span class="input-group-addon" onclick="ChooseImg()">
+                            <i class="fa fa-upload fa-lg"></i>
+                        </span>
                     </div>
+                    <img class="img img-thumbnail" id="Img" src="~/Content/img/5f660a6763af6a0025a73587.jpg" style="height: 100px;width:100px" />                    
+                    @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
+                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })                            
-                            <span class="input-group-addon" onclick="ChooseImg()">
-                                <i class="fa fa-upload fa-lg"></i>
-                            </span>
-                        </div>
-                        <img class="img img-thumbnail" id="Img" src="" style="height: 200px;width:200px"/>                      
-                        @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
-                    </div>
-                     
-
-                    </div>
+                    @*<div class="form-group row">
+                            <label class="col-md-3">File Upload</label>
+                            <div class="col-md-9">
+                                <div class="custom-file">
+                                    <input type="file"
+                                           class="custom-file-input"
+                                           id="validatedCustomFile"
+                                           required />
+                                    <label class="custom-file-label"
+                                           for="validatedCustomFile">Choose file...</label>
+                                    <div class="invalid-feedback">
+                                        Example invalid custom file feedback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2", })
@@ -96,20 +157,12 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                        </div>
-                    </div>           
-                    <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Create" class="btn btn-default" />
                         </div>
                     </div>
-                
+                </div>
             }
-
             <div>
                 @Html.ActionLink("Back to List", "Index")
             </div>
@@ -117,7 +170,7 @@
     </div>
 </div>
 @section Scripts {
-    <script>        
+    <script>
         function ChooseImg() {
             const finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
