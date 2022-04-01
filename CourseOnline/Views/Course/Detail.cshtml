@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "CouseDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var session = (CourseOnline.Models.User)Session[CourseOnline.Common.CommonConstants.USER_SESSION];
 }
 <style>
     .collapsible {

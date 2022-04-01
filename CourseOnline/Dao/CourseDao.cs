@@ -16,11 +16,11 @@ namespace CourseOnline.Dao
 
         public List<Cours> ListAll()
         {
-            return db.Courses.Where(x => x.Status == true).OrderBy(x => x.Id).ToList();
+            return db.Courses.Where(x => x.Status == true).OrderByDescending(x => x.Id).ToList();
         }  
         public List<Category> ListAllCate()
         {
-            return db.Categories.Where(x => x.Status == true).OrderBy(x => x.Id).ToList();
+            return db.Categories.Where(x => x.Status == true).OrderByDescending(x => x.Id).ToList();
         }
         public List<Cours> Search(string keyword)
         {
