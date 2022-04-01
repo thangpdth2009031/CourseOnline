@@ -3,10 +3,12 @@
     ViewBag.Title = "AccountProfile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{ var session = (CourseOnline.Models.User)Session[CourseOnline.Common.CommonConstants.USER_SESSION];
+
+}
 <style>
     .tablink {
-        background-color: white !important;
-        float: left;
+        background-color: white !important;     
         border: none;
         outline: none;
         cursor: pointer;
@@ -20,13 +22,30 @@
 
     /* Style the tab content (and add height:100% for full page content) */
     .tabcontent {
+       
         display: none;
-        padding: 100px 20px;
+        padding: 50px 20px;
         height: 100%;
     }
+    input {
+        padding: 5px;        
+        background-color: #f0fbfc;
+    }
 </style>
-<div class="m-4">
-    <h1>Trang Cá Nhân & Cài Đặt</h1>
+
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Trang cá nhân</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item text-white">Account / AccountProfile</li>                       
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container">
     <div class="row border-bottom">
@@ -36,166 +55,200 @@
         <div class="col-3"> <button class="tablink text-center" style="border:none" onclick="openPage('About', this)">Hoạt Động Gần Đây</button></div>
     </div>
 </div>
-<div id="Home" class="tabcontent p-5">
-    <div class="row">
-        <div class="col-sm-4">
-            <label>Tên</label>
-            <input type="text" name="name" value="" />
-            <label>Giới Tính</label>
-            <input type="text" name="Gioitinh" value="" />
-            <label>Sdt</label>
-            <input type="text" name="SDT" value="" />
-        </div>
-        <div class="col-sm-4">
-            <label>Họ</label>
-            <input type="text" name="Ho" value="" />
-            <label>Ngày sinh</label>
-            <input type="date" name="ngaysinh" value="" />
-        </div>
-        <div class="col-sm-4">
+<div class="container">
+    <div id="Home" class="tabcontent p-5">
+        <div class="row">
 
-            <img style="display:block" src="~/Content/img/5f660a6763af6a0025a73587.jpg" />
-            <label class="ps-3">Cập Nhật ảnh</label>
+
+            <div class="col-sm-4 mx-3">
+                <label>Full Name</label>
+                <input type="text" name="name" value="@session.FullName" />
+                <label class="mt-2">Tài khoản</label>
+                <input type="text" name="Gioitinh" value="@session.UserName" />
+                <label class="mt-2">Số điện thoại</label>
+                <input type="text" name="SDT" value="@session.Phone" />
+            </div>
+            <div class="col-sm-4 mx-3">
+                <label>Email</label>
+                <input type="text" name="DiaChi" value="@session.Email" />
+                <label class="mt-2">Địa chỉ</label>
+                <input type="text" name="DiaChi" value="@session.Address" />
+                <label class="mt-2">Ngày sinh</label>
+                <input type="date" name="ngaysinh" value="@session.DateOfBirth" />
+            </div>
+            <div class="col-sm-3">
+                <div class="items-center">
+                    <img style="margin: 10px 55px; " src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" />                    
+                </div>
+             
+            </div>
+
         </div>
     </div>
-</div>
 
-<div id="News" class="tabcontent">
-    <h3 style="color: aqua">Cắn Đạt Làm Chó</h3>
-    <div class="row">
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            <div class="team-item bg-light">
-                <div class="overflow-hidden">
-                    <img class="img-fluid" src="/Content/img/team-1.jpg" alt="">
-                </div>
-                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+    <div id="News" class="tabcontent">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="/Content/img/team-1.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Instructor Name</h5>
+                        @*<small>Designation</small>*@
                     </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-0">Instructor Name</h5>
-                    @*<small>Designation</small>*@
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="/Content/img/team-2.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Instructor Name</h5>
+                        @* <small>Designation</small>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="/Content/img/team-3.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Instructor Name</h5>
+                        @*<small>Designation</small>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="/Content/img/team-4.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Instructor Name</h5>
+                        @*<small>Designation</small>*@
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-            <div class="team-item bg-light">
-                <div class="overflow-hidden">
-                    <img class="img-fluid" src="/Content/img/team-2.jpg" alt="">
-                </div>
-                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-0">Instructor Name</h5>
-                   @* <small>Designation</small>*@
-                </div>
-            </div>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <div class="row" style="background-color:#eeeeee; margin: 10px 0">
+            <table>
+                <tr class="py-3">
+                    <td style="width: 60px"> <img style="width:60px; height:60px; margin:10px 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
+                    <td> <div style="color: black; margin:0 30px">100 ngày nâng cao trình độ bốc phét</div></td>
+                    <td>#TP Đặt hàng 11 Mar 2002</td>
+                    <td><Button class="text-center" onclick="openPage" style="border: hidden; color: white; border: 2px solid #455a64; background-color: #455a64">Hủy</Button></td>
+                    <td><Button class="text-xl-center" onclick="openPage" style="background-color: #ffc107;border: 2px solid #ffc107; border-radius: 20px; color:white">Mua lại</Button></td>
+                </tr>
+            </table>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-            <div class="team-item bg-light">
-                <div class="overflow-hidden">
-                    <img class="img-fluid" src="/Content/img/team-3.jpg" alt="">
-                </div>
-                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-0">Instructor Name</h5>
-                    @*<small>Designation</small>*@
-                </div>
-            </div>
+        <div class="row" style="background-color:#eeeeee; margin: 10px 0">
+            <table>
+                <tr class="py-3">
+                    <td style="width: 60px"> <img style="width:60px; height:60px; margin:10px 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
+                    <td> <div style="color: black; margin:0 30px">100 ngày nâng cao trình độ bốc phét</div></td>
+                    <td>#TP Đặt hàng 11 Mar 2002</td>
+                    <td><Button class="text-center" onclick="openPage" style="border: hidden; color: white; border: 2px solid #455a64; background-color: #455a64">Hủy</Button></td>
+                    <td><Button class="text-xl-center" onclick="openPage" style="background-color: #ffc107;border: 2px solid #ffc107; border-radius: 20px; color:white">Mua lại</Button></td>
+                </tr>
+            </table>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-            <div class="team-item bg-light">
-                <div class="overflow-hidden">
-                    <img class="img-fluid" src="/Content/img/team-4.jpg" alt="">
-                </div>
-                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-0">Instructor Name</h5>
-                    @*<small>Designation</small>*@
-                </div>
-            </div>
+        <div class="row" style="background-color:#eeeeee; margin: 10px 0">
+            <table>
+                <tr class="py-3">
+                    <td style="width: 60px"> <img style="width:60px; height:60px; margin:10px 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
+                    <td> <div style="color: black; margin:0 30px">100 ngày nâng cao trình độ bốc phét</div></td>
+                    <td>#TP Đặt hàng 11 Mar 2002</td>
+                    <td><Button class="text-center" onclick="openPage" style="border: hidden; color: white; border: 2px solid #455a64; background-color: #455a64">Hủy</Button></td>
+                    <td><Button class="text-xl-center" onclick="openPage" style="background-color: #ffc107;border: 2px solid #ffc107; border-radius: 20px; color:white">Mua lại</Button></td>
+                </tr>
+            </table>
+        </div>
+        @*<div class="row">
+            <img class="text-center" style="width:200px; margin-left:572px" src="~/Content/img/istockphoto-1142859120-170667a-removebg-preview.png" />
+            <h3 class="text-center">Không Có Khóa Học Đã Đăng Ký</h3>
+        </div>*@
+    </div>
+
+    <div id="About" class="tabcontent container">  
+        <div class="row">
+            <table class="mb-4">
+                <tr style="background-color:#eeeeee; border-radius: 10px; margin: 30px 0">
+                    <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
+                    <td> <div style="color: black; margin: 25px">Đạt đã thay đổi</div></td>
+                    <td class="text-center">Tài Khoản</td>
+                    <td class="text-xl-center">11pm</td>
+                </tr>
+            </table>
+            <table class="mb-4">
+                <tr style="background-color:#eeeeee; border-radius: 10px; margin: 30px 0">
+                    <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
+                    <td> <div style="color: black; margin: 25px">Đạt đã thay đổi</div></td>
+                    <td class="text-center">Tài Khoản</td>
+                    <td class="text-xl-center">11pm</td>
+                </tr>
+            </table>
+            <table class="mb-4">
+                <tr style="background-color:#eeeeee; border-radius: 10px; margin: 30px 0">
+                    <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
+                    <td> <div style="color: black; margin: 25px">Đạt đã thay đổi</div></td>
+                    <td class="text-center">Tài Khoản</td>
+                    <td class="text-xl-center">11pm</td>
+                </tr>
+            </table>
         </div>
     </div>
+
 </div>
 
-<div id="Contact" class="tabcontent">
-    <div class="row" style="background-color:#eeeeee; border-radius: 10px">
-        <table>
-            <tr class="py-3" style="height:100px">
-                <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
-                <td> <h3 style="color: aqua; margin:0">100 ngày nâng cao trình độ bốc phét</h3></td>
-                <td>#TP Đặt hàng 11 Mar 2002</td>
-                <td><Button class="text-center" onclick="openPage" style="border: hidden; color: white; border: 2px solid #455a64; background-color: #455a64">Hủy</Button></td>
-                <td><Button class="text-xl-center" onclick="openPage" style="background-color: #ffc107;border: 2px solid #ffc107; border-radius: 20px; color:white">Mua lại</Button></td>
-            </tr>
-        </table>
-    </div>
-    <div class="row" style="background-color:#eeeeee; border-radius: 10px">
-        <table>
-            <tr class="py-3" style="height:100px">
-                <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
-                <td> <h3 style="color: aqua; margin:0">100 ngày nâng cao trình độ bốc phét</h3></td>
-                <td>#TP Đặt hàng 11 Mar 2002</td>
-                <td><Button class="text-center" onclick="openPage" style="border: hidden; color: white; border: 2px solid #455a64; background-color: #455a64">Hủy</Button></td>
-                <td><Button class="text-xl-center" onclick="openPage" style="background-color: #ffc107;border: 2px solid #ffc107; border-radius: 20px; color:white">Mua lại</Button></td>
-            </tr>
-        </table>
-    </div>
-    <div class="row" style="background-color:#eeeeee; border-radius: 10px">
-        <table>
-            <tr class="py-3" style="height:100px">
-                <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
-                <td> <h3 style="color: aqua; margin:0">100 ngày nâng cao trình độ bốc phét</h3></td>
-                <td>#TP Đặt hàng 11 Mar 2002</td>
-                <td><Button class="text-center" onclick="openPage" style="border: hidden; color: white; border: 2px solid #455a64; background-color: #455a64">Hủy</Button></td>
-                <td><Button class="text-xl-center" onclick="openPage" style="background-color: #ffc107;border: 2px solid #ffc107; border-radius: 20px; color:white">Mua lại</Button></td>
-            </tr>
-        </table>
-    </div>
-    @*<div class="row">
-        <img class="text-center" style="width:200px; margin-left:572px" src="~/Content/img/istockphoto-1142859120-170667a-removebg-preview.png" />
-        <h3 class="text-center">Không Có Khóa Học Đã Đăng Ký</h3>
-    </div>*@
-</div>
+<script>
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
 
-<div id="About" class="tabcontent container">
-    <h3 style="color: aqua">Hoạt Động Gần Nhất</h3>
-    <div class="row">
-        <table class="mb-4">
-            <tr style="background-color:#eeeeee; border-radius: 10px; height:100px">
-                <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
-                <td> <h5 style="color: pink; margin-top:20px">Đạt đã thay đổi</h5></td>
-                <td class="text-center">Tài Khoản</td>
-                <td class="text-xl-center">11pm</td>
-            </tr>
-        </table>
-        <table>
-            <tr style="background-color:#eeeeee; border-radius: 10px; height:100px">
-                <td style="width: 60px"> <img style="width:60px; height:60px; margin:0 20px 0 20px; border-radius:50%" src="~/Content/img/5f660a6763af6a0025a73587.jpg" /></td>
-                <td> <h5 style="color: pink; margin-top:20px">Đạt đã thay đổi</h5></td>
-                <td class="text-center">Tài Khoản</td>
-                <td class="text-xl-center">11pm</td>
-            </tr>
-        </table>
-    </div>
-</div>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>

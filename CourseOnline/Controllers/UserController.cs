@@ -62,10 +62,17 @@ namespace CourseOnline.Controllers
                 if (result == 1)
                 {
                     var user = dao.GetById(model.Username);
-                    var userSession = new UserLogin();
+                    var userSession = new User();
                     userSession.UserName = user.UserName;
-                    userSession.UserId = user.Id;
+                    userSession.Phone = user.Phone;
+                    userSession.Email = user.Email;
+                    userSession.FullName = user.FullName;
+                    userSession.Address = user.Address;
+                    userSession.Avatar = user.Avatar;
+                    userSession.DateOfBirth = user.DateOfBirth;
+                    userSession.Gender = user.Gender;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
+                    Debug.WriteLine(userSession);
                     return Redirect("/");
                 }
                 else if (result == 0)
@@ -89,6 +96,7 @@ namespace CourseOnline.Controllers
             return View(model);
         }
        
+    
         [HttpPost]
         [ValidateAntiForgeryToken]
         // [CaptchaValidation("CaptchaCode", "registerCapcha", "Mã xác nhận không đúng!")]*/
