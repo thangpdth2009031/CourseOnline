@@ -173,7 +173,6 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\ViewModel\CourseViewModel.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2214,6 +2213,25 @@
     <Content Include="Content\lib\waypoints\waypoints.min.js" />
     <Content Include="Content\lib\wow\wow.js" />
     <Content Include="Content\lib\wow\wow.min.js" />
+    <Content Include="Content\mega-dropdown\css\reset.css" />
+    <Content Include="Content\mega-dropdown\css\style.css" />
+    <Content Include="Content\mega-dropdown\img\img.png" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-1.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-10.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-11.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-12.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-2.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-3.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-4.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-5.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-6.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-7.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-8.svg" />
+    <Content Include="Content\mega-dropdown\img\nucleo-icon-9.svg" />
+    <Content Include="Content\mega-dropdown\js\jquery-2.1.1.js" />
+    <Content Include="Content\mega-dropdown\js\jquery.menu-aim.js" />
+    <Content Include="Content\mega-dropdown\js\main.js" />
+    <Content Include="Content\mega-dropdown\js\modernizr.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="DB\course-update-script.sql" />
     <Content Include="favicon.ico" />
@@ -2751,6 +2769,10 @@
     <Content Include="bin\CourseOnline.dll.config" />
     <Content Include="obj\Release\CourseOnline.csproj.AssemblyReference.cache" />
     <Content Include="obj\Release\CourseOnline.csproj.CoreCompileInputs.cache" />
+    <Content Include="Content\mega-dropdown\partials\_layout.scss" />
+    <Content Include="Content\mega-dropdown\partials\_mixins.scss" />
+    <Content Include="Content\mega-dropdown\partials\_variables.scss" />
+    <Content Include="Content\mega-dropdown\scss\style.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2796,8 +2818,8 @@
     <Content Include="Views\Course\ListCourse.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
-    <Content Include="Views\Course\ListCategory.cshtml" />
     <Content Include="Views\Course\Search.cshtml" />
+    <Content Include="Views\Course\ListCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

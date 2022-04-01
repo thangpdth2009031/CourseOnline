@@ -596,7 +596,7 @@ header {
     content: '';
     top: 290px;
     left: 15px;
-    height: 1px;
+    /*height: 1px;*/
     width: 520px;
     background-color: #ebebeb;
   }
@@ -625,8 +625,7 @@ header {
     border-right-width: 1px;
     border-color: #ffff;
     border-style: solid;
-    padding: 0 30px;
-    height: 250px;
+    padding: 0 30px; 
   }
   .cd-dropdown-content .cd-secondary-dropdown > li:nth-of-type(2n) {
     border-right-width: 0;
